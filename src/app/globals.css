@@ -1,0 +1,501 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces — warm light system */
+  --background: #f5f5f3;
+  --background-elevated: #ffffff;
+  --background-secondary: #ffffff;
+  --background-grouped: #f0f0f7;
+  --surface-muted: #fbfbfa;
+  --dark-showcase: #16181c;
+  --dark-showcase-text: #f5f5f3;
+  --footer-bg: #111316;
+
+  /* Ink */
+  --foreground: #14161a;
+  --foreground-secondary: #5b6270;
+  --foreground-tertiary: #8a909c;
+  --foreground-faint: #b0b5be;
+
+  /* Lines */
+  --border: rgba(20, 22, 26, 0.07);
+  --border-strong: rgba(20, 22, 26, 0.12);
+
+  /* Accents */
+  --accent: #16181c;
+  --accent-hover: #000000;
+  --link: #2f6df0;
+  --link-hover: #1f52c4;
+  --focus-ring: #2f6df0;
+  --accent-blue: #2f6df0;
+  --accent-lavender: #8b7ff0;
+  --accent-cyan: #3aa0be;
+  --status-green: #22aa63;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(20, 22, 26, 0.04);
+  --shadow-md: 0 14px 34px rgba(20, 22, 26, 0.09);
+  --shadow-float: 0 16px 40px rgba(20, 22, 26, 0.12);
+  --shadow-nav: 0 8px 30px rgba(20, 22, 26, 0.09), 0 1px 2px rgba(20, 22, 26, 0.05);
+  --shadow-showcase: 0 40px 90px rgba(20, 22, 26, 0.24);
+
+  /* Radii */
+  --radius-control: 14px;
+  --radius-sm: 16px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Rhythm */
+  --section-y: clamp(3.5rem, 8vw, 7.25rem);
+  --section-y-bold: clamp(4.5rem, 10vw, 8.75rem);
+  --content-max: 84rem; /* 1344px — 1264px inner content at lg:px-10, matching the 1440 design canvas */
+  --measure: 34rem;
+
+  /* Type */
+  --font-sans: var(--font-ui), "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-ui), "SF Pro Display", -apple-system, sans-serif;
+
+  --text-hero: clamp(3.25rem, 8vw, 6.5rem);
+  --text-display: clamp(2.625rem, 5.9vw, 5.125rem);
+  --text-statement: clamp(2.125rem, 4.6vw, 3.5rem);
+  --text-section: clamp(1.875rem, 3.6vw, 3.25rem);
+  --text-title: clamp(1.75rem, 2.6vw, 2.375rem);
+  --text-body: 1.0625rem;
+  --text-meta: 0.6875rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-reveal: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration: 350ms;
+  --duration-slow: 480ms;
+
+  --header-h: 4.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--background-elevated);
+  --color-secondary: var(--background-secondary);
+  --color-grouped: var(--background-grouped);
+  --color-surface-muted: var(--surface-muted);
+  --color-showcase: var(--dark-showcase);
+  --color-showcase-text: var(--dark-showcase-text);
+  --color-footer: var(--footer-bg);
+
+  --color-ink: var(--foreground);
+  --color-ink-secondary: var(--foreground-secondary);
+  --color-ink-muted: var(--foreground-tertiary);
+  --color-ink-faint: var(--foreground-faint);
+
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-link: var(--link);
+  --color-blue: var(--accent-blue);
+  --color-lavender: var(--accent-lavender);
+  --color-cyan: var(--accent-cyan);
+  --color-status: var(--status-green);
+
+  --font-sans: var(--font-ui), "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-ui), "SF Pro Display", -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-size: var(--text-body);
+}
+
+::selection {
+  background: rgba(47, 109, 240, 0.18);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Hand cursor site-wide (Home, Work, About, Contact, case studies) —
+   Tailwind preflight sets cursor:default on buttons; force pointer on controls. */
+a[href],
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+input[type="submit"]:not(:disabled),
+input[type="button"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+label[for],
+select:not(:disabled),
+summary {
+  cursor: pointer !important;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed !important;
+}
+
+/* ---- Editorial type helpers ---- */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Condensed display (Bebas Neue) — hero backdrop / name only */
+.font-display-condensed {
+  font-family: var(--font-display-condensed), "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+}
+
+.hero-portfolio-word {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--header-h) * 0.08);
+  z-index: 0;
+  width: 100vw;
+  max-width: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  /* Stretch taller without raising font-size */
+  transform: translateX(-50%) scaleY(1.42);
+  transform-origin: top center;
+  pointer-events: none;
+  font-family: var(--font-display-condensed), "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(15rem, 25vw, 30rem);
+  font-weight: 400;
+  line-height: 0.72;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  color: color-mix(in srgb, var(--foreground) 12%, transparent);
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .hero-portfolio-word {
+    top: calc(var(--header-h) * 0.04);
+  }
+}
+
+@media (max-width: 1279px) {
+  .hero-portfolio-word {
+    font-size: clamp(8rem, 22vw, 18rem);
+    line-height: 0.74;
+    letter-spacing: 0.01em;
+    transform: translateX(-50%) scaleY(1.32);
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-portfolio-word {
+    font-size: clamp(4.75rem, 22vw, 10rem);
+    line-height: 0.78;
+    letter-spacing: 0.01em;
+    transform: translateX(-50%) scaleY(1.12);
+    top: calc(var(--header-h) * 0.2);
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-portfolio-word {
+    font-size: clamp(3.75rem, 20vw, 6.5rem);
+    letter-spacing: 0.01em;
+    transform: translateX(-50%) scaleY(1.08);
+    top: calc(var(--header-h) * 0.22);
+  }
+}
+
+.hero-name {
+  font-family: var(--font-display-condensed), "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(4rem, 5.2vw, 6.25rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 639px) {
+  .hero-name {
+    font-size: clamp(3.25rem, 13vw, 4rem);
+    letter-spacing: 0.03em;
+  }
+}
+
+.text-hero {
+  font-size: var(--text-hero);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.text-display {
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.042em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.text-statement {
+  font-size: var(--text-statement);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.text-section {
+  font-size: var(--text-section);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.text-title {
+  font-size: var(--text-title);
+  line-height: 1.14;
+  letter-spacing: -0.032em;
+  font-weight: 600;
+}
+
+.text-meta {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.text-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--foreground-tertiary);
+  font-weight: 500;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.measure {
+  max-width: var(--measure);
+}
+
+.section-y {
+  padding-block: var(--section-y);
+}
+
+.section-y-bold {
+  padding-block: var(--section-y-bold);
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+
+/* ---- Scroll reveal ----
+   Content is visible by default. Only once JS has marked <html> as
+   reveal-ready do elements start hidden, then transition in when the
+   IntersectionObserver (or a safety timeout) adds .is-visible. A CSS
+   transition's end state is guaranteed even if the transition is
+   interrupted, so content can never freeze half-faded. */
+.reveal {
+  transition:
+    opacity 0.7s var(--ease-reveal),
+    transform 0.7s var(--ease-reveal);
+}
+
+:root.reveal-ready .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 22px));
+}
+
+/* Transform-only so a stalled animation clock can never dim the page —
+   worst case is content sitting a few px low for a moment. */
+.page-enter {
+  animation: page-enter 0.4s var(--ease-reveal) both;
+}
+
+@keyframes page-enter {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root.reveal-ready .reveal:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal,
+  .page-enter {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ---- Motion language ---- */
+@keyframes dc-flow {
+  to {
+    stroke-dashoffset: -320;
+  }
+}
+
+@keyframes dc-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes dc-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes dc-wave {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.dc-flow {
+  animation: dc-flow 18s linear infinite;
+}
+
+.dc-pulse {
+  animation: dc-pulse 2.6s ease-in-out infinite;
+}
+
+.dc-drift {
+  animation: dc-drift 7s ease-in-out infinite;
+}
+
+.dc-drift-slow {
+  animation: dc-drift 9s ease-in-out infinite 0.8s;
+}
+
+.dc-wave {
+  animation: dc-wave 30s linear infinite;
+}
+
+/* Hero figure: fly down into place on load */
+@keyframes hero-fly-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -18%, 0) scale(1.04);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(0, 1.5%, 0) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.hero-fly-in {
+  animation: hero-fly-in 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+/* Subtle living hover — small vertical jerk after landing */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(0, -6px, 0);
+  }
+  45% {
+    transform: translate3d(0, -2px, 0);
+  }
+  70% {
+    transform: translate3d(0, -8px, 0);
+  }
+  85% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+.hero-float {
+  animation: hero-float 3.6s ease-in-out 1.2s infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .dc-flow,
+  .dc-pulse,
+  .dc-drift,
+  .dc-drift-slow,
+  .dc-wave,
+  .hero-fly-in,
+  .hero-float {
+    animation: none !important;
+  }
+}
+
+/* Soft image download deterrents — images remain visible for SEO/browsing */
+img,
+picture,
+canvas,
+[data-protect-media],
+.protect-media {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img {
+  pointer-events: auto;
+}

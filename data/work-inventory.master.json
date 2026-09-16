@@ -1,0 +1,2134 @@
+{
+  "workInventoryVersion": "4.2",
+  "lastUpdated": "2026-08-29",
+  "_instructions": {
+    "howToUse": "This is the portfolio source-of-truth. Populate the portfolio UI from this file. Do not invent missing facts.",
+    "rules": [
+      "Use the content in this file as the primary portfolio source.",
+      "Do not invent metrics, users, revenue, downloads, performance percentages, business outcomes or production claims.",
+      "Use first-person ownership language only where the project evidence supports it.",
+      "Keep project-level functionality separate from personal ownership.",
+      "Production applications may have detailed case studies.",
+      "Mobile applications may have detailed case studies.",
+      "Non-production applications may have detailed case studies but must clearly retain their non-production status.",
+      "Business websites remain card-based portfolio items with live URLs rather than deep product case studies.",
+      "Do not expose private API keys, Firebase credentials, secrets, client credentials or confidential information.",
+      "Use empty strings or empty arrays when information is genuinely unavailable.",
+      "featured should be true only for the strongest flagship production projects.",
+      "priority controls display order within each category.",
+      "frame must be product, systems or delivery.",
+      "archiveCategory must be production, websites, mobile or non-production."
+    ],
+    "positioning": {
+      "primaryRole": "Frontend Product Engineer",
+      "secondaryPositioning": "Frontend-first, full-stack capable.",
+      "coreMessage": "I own the product UI: architecture, authentication, payments, dashboards, API integration, and the workflows the business actually runs.",
+      "supportingMessage": "I design and build product interfaces, integrate them with real systems, and contribute across the stack when the product requires it."
+    }
+  },
+  "workPage": {
+    "title": "Products I owned from interface through delivery.",
+    "intro": "Production web products, business websites, mobile applications, and web application development — with frontend product ownership at the center."
+  },
+  "categoryCounts": {
+    "productionApplications": "05",
+    "businessWebsites": "08+",
+    "mobileApplications": "04",
+    "nonProductionApplications": "03"
+  },
+  "productionApplications": [
+    {
+      "slug": "procoach",
+      "name": "ProCoach",
+      "displayName": "ProCoach",
+      "category": "SaaS · Coaching Marketplace",
+      "type": "Two-sided web marketplace / booking platform",
+      "status": "Production",
+      "statusDetail": "Production-intended product UI with real API and payment integrations",
+      "featured": true,
+      "priority": 1,
+      "archiveCategory": "production",
+      "frame": "product",
+      "timeline": "Active repository history: Apr 2026 – Aug 2026",
+      "teamSize": null,
+      "liveUrl": "https://joinprocoach.com",
+      "image": "/Projects Images/SaaS/procoach-coaching-marketplace-ui.png",
+      "demo": false,
+      "oneLiner": "A two-sided coaching marketplace where coaches publish paid sessions and learners discover, enroll, and pay in one product.",
+      "description": "ProCoach connects sports and fitness coaches with learners through session discovery, scheduling, enrollment, and payments. The product serves coaches, learners, and parents enrolling children — each with role-specific workflows inside one authenticated web application.",
+      "overview": "The product brings the operational side of coaching sessions and the learner booking experience into one authenticated web application. Coaches can create and manage sessions, invite participants, handle enrollment operations and manage payouts, while learners can discover sessions, enroll themselves or children, complete payments and manage their account.",
+      "problem": "Coaches needed a product for publishing and operating paid sessions, while learners and parents needed a reliable way to discover sessions, enroll and pay. The frontend also had to coordinate multiple APIs, authentication states, session workflows and payment flows while being delivered as a statically hosted Next.js application.",
+      "solution": "Built and evolved the frontend product experience around role-specific workflows, reusable feature structures, API integrations and embedded Stripe payment experiences. The application connects profile, schedules and payment services into the coach and learner journeys.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Primary frontend engineer on the ProCoach web client, with ownership across major product UI and feature workflows.",
+      "backendContribution": "Integrated and orchestrated existing backend services from the frontend. No backend service ownership is claimed from this repository.",
+      "ownership": [
+        "Majority of UI feature delivery represented in the available Git history.",
+        "Learner enrollment and payment experience.",
+        "Coach session creation and management surfaces.",
+        "Session UX and calendar-related flows.",
+        "SMS consent and authentication-related frontend flows.",
+        "Deep-link and onboarding behaviour.",
+        "Coach overview and related dashboard integration.",
+        "Frontend integration with profile, schedules and payments APIs.",
+        "Stripe Embedded Checkout integration on the client.",
+        "Stripe Connect wallet-related frontend surfaces.",
+        "Frontend handling of payment confirmation and retry behaviour."
+      ],
+      "features": [
+        "Coach session creation and management",
+        "Draft, scheduled and historical session workflows",
+        "Learner session discovery",
+        "Invited and enrolled session views",
+        "Learner enrollment",
+        "Parent enrollment for child dependents",
+        "Coach calendar",
+        "Coach wallet and payout onboarding",
+        "Stripe Embedded Checkout",
+        "Stripe Connect wallet surfaces",
+        "Payment history",
+        "Profiles and dependents",
+        "OTP and account verification",
+        "Password reset",
+        "SMS consent",
+        "Session expiration handling",
+        "Deep-linked enrollment flows"
+      ],
+      "modules": [
+        "Marketing and public content",
+        "Authentication and onboarding",
+        "Coach session operations",
+        "Coach calendar",
+        "Coach wallet",
+        "Learner session discovery",
+        "Enrollment",
+        "Payments",
+        "Payment history",
+        "Profiles and dependents",
+        "Settings"
+      ],
+      "rolesSupported": [
+        "Coach",
+        "Learner",
+        "Parent enrolling a child",
+        "Unauthenticated visitor"
+      ],
+      "stack": {
+        "frontend": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "CSS variables",
+          "shadcn/ui",
+          "Radix UI primitives",
+          "Zod",
+          "date-fns",
+          "react-day-picker",
+          "Recharts",
+          "react-quill",
+          "DOMPurify"
+        ],
+        "mobile": [],
+        "backend": [
+          "External REST APIs",
+          "Auth/profile API",
+          "Schedules API",
+          "Payments API",
+          "Legacy authentication service"
+        ],
+        "database": [
+          "Backend-managed persistence; no database layer in frontend repository"
+        ],
+        "stateManagement": [
+          "React Context",
+          "Local component/hook state",
+          "URL search parameters",
+          "sessionStorage",
+          "localStorage"
+        ],
+        "authentication": [
+          "Email/password JWT",
+          "OTP email verification",
+          "OTP phone verification",
+          "Role-aware coach/learner routing",
+          "Client-side session expiry handling"
+        ],
+        "payments": [
+          "Stripe Embedded Checkout",
+          "Stripe Connect",
+          "Payment API integration",
+          "Payment confirmation and retry flow"
+        ],
+        "notifications": [
+          "SMS consent flow"
+        ],
+        "realtime": [],
+        "testing": [
+          "TypeScript/tsx assert-based regression checks",
+          "Limited product test coverage"
+        ],
+        "deployment": [
+          "Next.js static export",
+          "Cloudflare Pages deployment pattern",
+          "CloudFront media delivery"
+        ],
+        "other": [
+          "CSP configuration",
+          "Multi-origin API integration"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Reliable paid enrollment",
+          "description": "Enrollment could involve the schedules API, payments API and Stripe succeeding at different stages. The frontend therefore had to manage the transition from enrollment review to checkout and then payment confirmation/retry rather than treating payment as a single UI action."
+        },
+        {
+          "title": "Static hosting with dynamic product workflows",
+          "description": "The application was designed as a static Next.js export while still supporting dynamic session and enrollment URLs. Routing and fallback behaviour therefore had to work within the static hosting model."
+        },
+        {
+          "title": "Multiple API services",
+          "description": "The frontend consumes separate services for authentication/profile, schedules and payments, requiring a consistent client-side integration layer and session handling."
+        },
+        {
+          "title": "Timezone-sensitive session information",
+          "description": "Session dates and times need to remain meaningful across user-facing scheduling and calendar views, requiring deliberate date parsing and formatting."
+        },
+        {
+          "title": "Deep-linked authenticated workflows",
+          "description": "Users can enter product flows from links and invitations, so the frontend has to carry the intended destination through authentication and onboarding."
+        }
+      ],
+      "architectureDecisions": [
+        "Static Next.js export for the frontend deployment model.",
+        "Feature-oriented hooks and view structures for product workflows.",
+        "React Context for selected cross-cutting application state.",
+        "Client-side authentication because the deployment model has no server runtime.",
+        "Embedded Stripe experiences rather than building a custom card-entry flow.",
+        "Dedicated frontend API client behaviour for multiple service origins.",
+        "Client-side session expiry handling."
+      ],
+      "impact": [
+        "Delivered a substantial production-shaped frontend for a two-sided coaching marketplace.",
+        "Connected real product workflows across authentication, sessions, enrollment and payments.",
+        "Implemented a real payment experience rather than a static checkout mock.",
+        "Created distinct coach and learner experiences around the same product."
+      ],
+      "caseStudy": {
+        "heroTitle": "Coaching marketplace — from session to payment",
+        "heroSubtitle": "Building the frontend that connects coaches, learners, and Stripe across multiple production APIs.",
+        "context": "ProCoach is a sports and fitness coaching marketplace. Coaches need to publish sessions, manage enrollments, and handle payouts. Learners and parents need a reliable path to discover sessions, enroll, and pay. I owned the web client that ties these journeys together.",
+        "problem": "The product had to support the full coaching workflow — session publishing, enrollment, payments, and payouts — while coordinating several backend services from a statically hosted Next.js frontend.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Frontend product architecture",
+          "Coach session workflows",
+          "Learner enrollment",
+          "Payment experience",
+          "API integration",
+          "Authentication-related UX",
+          "Calendar and session UX",
+          "Wallet and payout surfaces"
+        ],
+        "approach": "I treated the frontend as the product layer: not isolated screens, but connected workflows from discovery through enrollment, checkout, confirmation, and retry states.",
+        "technicalImplementation": [
+          "Next.js App Router with static export",
+          "Feature-level hooks and views",
+          "REST API integration across multiple service domains",
+          "JWT and OTP authentication flows",
+          "Stripe Embedded Checkout",
+          "Stripe Connect frontend surfaces",
+          "Client-side payment confirmation and retry handling",
+          "URL-driven deep links and filters",
+          "Responsive session and dashboard interfaces"
+        ],
+        "engineeringDecisions": [
+          "Static hosting shaped routing and authentication architecture.",
+          "Payment was implemented as a stateful product workflow rather than a standalone checkout screen.",
+          "Feature-specific state was kept close to the workflow instead of introducing a large global state library."
+        ],
+        "production": "The repository contains production-oriented configuration, multiple API environments, Stripe integrations, CSP handling and static deployment configuration. Exact live traffic and business metrics are not established by the repository.",
+        "outcome": "A production-shaped marketplace frontend connecting real coaching, enrollment, and payment workflows — without claiming unverified business metrics."
+      },
+      "screenshots": [],
+      "portfolioPresentation": {
+        "homepageSummary": "Two-sided coaching marketplace with real session, enrollment and payment workflows.",
+        "workPageSummary": "Marketplace frontend spanning coach operations, learner booking, and Stripe payments.",
+        "caseStudyPriority": "highest",
+        "visualPriority": "highest"
+      }
+    },
+    {
+      "slug": "khetivalah",
+      "name": "KhetiValah",
+      "displayName": "KhetiValah",
+      "category": "Marketplace · Agriculture",
+      "type": "Web marketplace & event booking platform",
+      "status": "Production",
+      "statusDetail": "Production web application — marketplace, booking, and payment workflows",
+      "featured": true,
+      "priority": 2,
+      "archiveCategory": "production",
+      "frame": "product",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/SaaS/khetivalah-agriculture-marketplace-ui.png",
+      "demo": false,
+      "oneLiner": "Agricultural marketplace and event booking on the web — listings, stall booking, Razorpay payments, and GST billing across vendor, sponsor, and participant roles.",
+      "description": "KhetiValah is a production web platform for agricultural commerce and event participation. Vendors, sponsors, farmers, buyers, and participants use role-specific workflows for listings, stall booking, registrations, product catalogs, checkout, and billing.",
+      "overview": "The web application connects marketplace discovery, event stall booking, sponsorship plans, participant registration, vendor product management, and payment operations in one multi-role product.",
+      "problem": "Agricultural participants need more than static listings. Vendors must book stalls and manage products, sponsors select plans, attendees register and pay, and every role needs reliable Razorpay checkout, billing, and order visibility on the web.",
+      "solution": "A React web client integrated with the AgriEvents / marketplace backend — role-aware booking flows, Razorpay payment UI, GST billing surfaces, catalog management, and operational dashboards.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend engineer on the KhetiValah web application — marketplace UI, booking flows, payments, and API integration.",
+      "backendContribution": "Frontend integration with Spring Boot / AgriEvents REST APIs. Backend service ownership is not claimed.",
+      "ownership": [
+        "Marketplace and event discovery interfaces on the web.",
+        "Multi-role booking and checkout workflows.",
+        "Stall booking and participation flows.",
+        "Razorpay payment UI and payment-state handling.",
+        "GST billing and invoice-related interfaces.",
+        "Vendor product catalog and listing management.",
+        "Early Bird Offers and Stand Types modules.",
+        "OTP authentication and account flows on the web.",
+        "Operational dashboards and order/payment history views.",
+        "REST API integration across marketplace and event services."
+      ],
+      "features": [
+        "Agricultural marketplace listings",
+        "Farmer, buyer, investor, and vendor workflows",
+        "Event discovery and event detail pages",
+        "Stall booking system",
+        "Sponsor plan selection",
+        "Participant registration and ticketing",
+        "Razorpay checkout",
+        "GST billing and invoice flows",
+        "Manual bank-transfer payment evidence",
+        "Vendor product catalog",
+        "Search and filtering",
+        "Orders and payment history",
+        "OTP authentication",
+        "Role-based access",
+        "Early Bird Offers",
+        "Stand Types",
+        "KYC-related UI"
+      ],
+      "modules": [
+        "Marketplace discovery",
+        "Event details",
+        "Stall booking",
+        "Sponsorship",
+        "Participant registration",
+        "Checkout and payments",
+        "Vendor catalog",
+        "Orders",
+        "Payment history",
+        "Billing",
+        "KYC",
+        "Profile and account"
+      ],
+      "rolesSupported": [
+        "Farmer",
+        "Vendor",
+        "Buyer",
+        "Investor",
+        "Sponsor",
+        "Participant",
+        "Unauthenticated visitor"
+      ],
+      "stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Responsive web UI"
+        ],
+        "mobile": [],
+        "backend": [
+          "Spring Boot REST APIs",
+          "AgriEvents API",
+          "Marketplace services"
+        ],
+        "database": [
+          "Server-side persistence via backend"
+        ],
+        "stateManagement": [
+          "React Context",
+          "Component state",
+          "API-driven state"
+        ],
+        "authentication": [
+          "OTP authentication",
+          "JWT / token flows",
+          "Role-based routing"
+        ],
+        "payments": [
+          "Razorpay",
+          "GST billing APIs",
+          "Payment status and retry UI",
+          "Manual transfer evidence upload"
+        ],
+        "notifications": [],
+        "realtime": [],
+        "testing": [
+          "Jest",
+          "Component and integration checks"
+        ],
+        "deployment": [
+          "Web application deployment",
+          "Environment-based API configuration"
+        ],
+        "other": [
+          "English/Telugu localization support"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Multi-role booking and checkout",
+          "description": "Vendors, sponsors, and participants follow different booking paths, but all converge on shared payment, billing, and order visibility requirements."
+        },
+        {
+          "title": "Razorpay and billing together",
+          "description": "Payment success, GST-related billing, and order state had to stay aligned across the UI and multiple backend responses."
+        },
+        {
+          "title": "Marketplace data on the web",
+          "description": "Listings, availability, early-bird offers, and stand types required transforming API-shaped data into usable booking and catalog interfaces."
+        },
+        {
+          "title": "Booking reconciliation",
+          "description": "Returning users needed previously selected stalls and order lines reflected accurately when they resumed a booking flow."
+        }
+      ],
+      "architectureDecisions": [
+        "Web-first product architecture with role-aware routes and modules.",
+        "Service layer around shared REST API integration.",
+        "Separate booking, catalog, and payment UI flows instead of one generic form.",
+        "Environment-based API configuration for staging and production.",
+        "Payment treated as a stateful workflow, not a single checkout button."
+      ],
+      "impact": [
+        "Delivered production web workflows for marketplace discovery, booking, and payments.",
+        "Connected Razorpay and GST billing into real participant and vendor journeys.",
+        "Supported multiple agricultural roles inside one web product."
+      ],
+      "caseStudy": {
+        "heroTitle": "Agriculture marketplace — booking and payments on the web",
+        "heroSubtitle": "Listings, stall booking, Razorpay checkout, and GST billing for vendors, sponsors, and participants.",
+        "context": "KhetiValah on the web is the production platform for agricultural marketplace and event participation. Mobile is a separate client — this case study covers the web application.",
+        "problem": "The business needed a web product where different roles could book, register, pay, and manage catalogs — with Razorpay and billing treated as part of the real workflow, not an afterthought.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Web marketplace and event UI",
+          "Booking and checkout flows",
+          "Razorpay payment experience",
+          "GST billing interfaces",
+          "Vendor catalog modules",
+          "Multi-role dashboards",
+          "REST API integration"
+        ],
+        "approach": "I built the web client around the business journeys that actually generate revenue and participation — discovery, booking, payment, billing, and post-payment visibility.",
+        "technicalImplementation": [
+          "React and TypeScript web application",
+          "Role-aware routes and feature modules",
+          "REST API integration with marketplace and event services",
+          "Razorpay payment UI and status handling",
+          "GST billing and invoice-related screens",
+          "Stall booking and registration workflows",
+          "Catalog, Early Bird Offers, and Stand Types modules",
+          "OTP authentication on the web"
+        ],
+        "engineeringDecisions": [
+          "Keep booking, payments, and billing as connected workflows.",
+          "Use a shared API layer across marketplace and event modules.",
+          "Present role-specific UI without duplicating the entire application."
+        ],
+        "production": "Production web application with real payment and booking integrations. Mobile companion app is documented separately under Khetivala App.",
+        "outcome": "A production web platform connecting agricultural marketplace discovery, booking, Razorpay payments, and billing workflows."
+      },
+      "screenshots": [],
+      "portfolioPresentation": {
+        "homepageSummary": "Agricultural web marketplace with booking, Razorpay, and GST billing.",
+        "workPageSummary": "Production web platform for marketplace discovery, stall booking, and payments.",
+        "caseStudyPriority": "highest",
+        "visualPriority": "highest"
+      }
+    },
+    {
+      "slug": "rdr-tech",
+      "name": "RDR Tech",
+      "displayName": "RDR Tech",
+      "category": "Workflow Platform · Audit & Taxation",
+      "type": "Real-time web workflow platform",
+      "status": "Production",
+      "statusDetail": "Production web application — real-time workflow, tasks, and operational dashboards",
+      "featured": true,
+      "priority": 3,
+      "archiveCategory": "production",
+      "frame": "systems",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/SaaS/rdr-tech-workflow-platform-ui.png",
+      "demo": false,
+      "oneLiner": "Real-time workflow platform for audit and tax teams — task management, live dashboards, role-based workflows, and WebSocket-driven updates on the web.",
+      "description": "RDR Tech is a production web platform for professional-services operations. Teams manage audit and taxation workflows, task assignments, approvals, documents, and reporting through a React application with real-time synchronization.",
+      "overview": "The web product replaces fragmented coordination with structured workflows, operational dashboards, and live status updates across roles in an audit and compliance practice.",
+      "problem": "Audit and tax teams need shared visibility into tasks, workload, and workflow state. Static dashboards and manual refresh are not enough when multiple users act on the same operational data.",
+      "solution": "A React web client with WebSocket-driven updates, role-aware workflow transitions, dense operational dashboards, and REST API integration with a Node.js backend.",
+      "myRole": "Frontend Lead",
+      "role": "Frontend lead on the RDR Tech web client — workflow UI, dashboards, real-time state, and API integration.",
+      "backendContribution": "Worked with the Node.js backend and real-time event lifecycle; backend service ownership is not claimed from the frontend repository.",
+      "ownership": [
+        "Frontend architecture for the web workflow platform.",
+        "Real-time dashboard and reporting interfaces.",
+        "Task and workflow management UI.",
+        "Role-based workflow transitions.",
+        "WebSocket integration and live UI updates.",
+        "Document management interfaces.",
+        "Subscription and billing-related UI where applicable.",
+        "REST API integration and client-side state handling.",
+        "Operational drill-down reporting views.",
+        "Production maintenance on the web client."
+      ],
+      "features": [
+        "Real-time operational dashboards",
+        "Task workflow management",
+        "Audit and taxation workflows",
+        "Role-based actions and approvals",
+        "WebSocket live updates",
+        "Task assignment",
+        "Document management",
+        "Drill-down reporting",
+        "Workload visibility",
+        "Subscription billing interfaces",
+        "Multi-user concurrent workflow updates",
+        "Search and filtering on operational data"
+      ],
+      "modules": [
+        "Dashboard",
+        "Tasks",
+        "Workflows",
+        "Approvals",
+        "Documents",
+        "Reporting",
+        "Team workload",
+        "Billing",
+        "Settings"
+      ],
+      "rolesSupported": [
+        "Administrator",
+        "Manager",
+        "POC",
+        "Assistant",
+        "Team member"
+      ],
+      "stack": {
+        "frontend": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Chart.js",
+          "Recharts"
+        ],
+        "mobile": [],
+        "backend": [
+          "Node.js REST APIs",
+          "WebSocket services"
+        ],
+        "database": [
+          "MongoDB via backend"
+        ],
+        "stateManagement": [
+          "Client state management",
+          "Real-time event handling"
+        ],
+        "authentication": [
+          "Authenticated web sessions",
+          "Role-based UI"
+        ],
+        "payments": [
+          "Subscription billing UI"
+        ],
+        "notifications": [],
+        "realtime": [
+          "WebSockets",
+          "Live workflow synchronization"
+        ],
+        "testing": [
+          "Jest"
+        ],
+        "deployment": [
+          "Web application deployment"
+        ],
+        "other": [
+          "Operational data visualization"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Real-time workflow synchronization",
+          "description": "Multiple users needed to see task and workflow changes without manual refresh, requiring WebSocket-driven UI updates."
+        },
+        {
+          "title": "Role-aware workflow states",
+          "description": "Different roles could perform different actions at each workflow stage, so the UI had to reflect permissions and valid transitions clearly."
+        },
+        {
+          "title": "Dense operational dashboards",
+          "description": "Reporting and workload views needed to present complex operational data without overwhelming users."
+        },
+        {
+          "title": "Concurrent updates",
+          "description": "Live collaboration on workflow data required predictable UI behaviour when multiple users acted at the same time."
+        }
+      ],
+      "architectureDecisions": [
+        "React SPA architecture for the operational web product.",
+        "WebSockets for live workflow synchronization instead of polling.",
+        "Role-aware UI composition around workflow states.",
+        "Reusable dashboard and table patterns for operational data.",
+        "Frontend structured around workflow modules rather than isolated pages."
+      ],
+      "impact": [
+        "Turned fragmented workflow coordination into a structured real-time web system.",
+        "Delivered live operational visibility for audit and tax teams.",
+        "Connected dashboards, tasks, and workflow transitions in one web product."
+      ],
+      "caseStudy": {
+        "heroTitle": "Real-time workflow ops for audit & tax teams",
+        "heroSubtitle": "Web dashboards, task workflows, and WebSocket updates — separate from the mobile client.",
+        "context": "RDR Tech on the web is the production workflow platform. The RDR Tech App is a separate mobile client documented under Mobile Applications.",
+        "problem": "Professional-services teams needed a web product where workflow progress, assignments, and reporting stayed current for every user in real time.",
+        "role": "Frontend Lead",
+        "ownership": [
+          "Web frontend architecture",
+          "Workflow and task UI",
+          "Real-time dashboards",
+          "WebSocket integration",
+          "Role-based workflow transitions",
+          "API integration",
+          "Operational reporting views"
+        ],
+        "approach": "I treated the web client as the live operations layer — workflow state, dashboards, and actions had to stay synchronized as users worked in parallel.",
+        "technicalImplementation": [
+          "React and TypeScript web application",
+          "WebSocket-driven live updates",
+          "REST API integration with Node.js services",
+          "Role-based workflow UI",
+          "Chart-based operational dashboards",
+          "Task assignment and approval flows",
+          "Document management interfaces"
+        ],
+        "engineeringDecisions": [
+          "Use WebSockets for workflow synchronization instead of manual refresh.",
+          "Model workflow permissions in the UI, not just on the server.",
+          "Keep reporting and task views modular but consistent."
+        ],
+        "production": "Production web workflow platform. Mobile companion app is documented separately under RDR Tech App.",
+        "outcome": "A real-time web operations platform for audit and taxation workflows, with live dashboards and role-aware task management."
+      },
+      "screenshots": [],
+      "portfolioPresentation": {
+        "homepageSummary": "Real-time workflow web platform for audit and tax operations.",
+        "workPageSummary": "Production web app with live dashboards, tasks, and WebSocket updates.",
+        "caseStudyPriority": "high",
+        "visualPriority": "high"
+      }
+    },
+    {
+      "slug": "sgreens-erp",
+      "name": "SGreens ERP",
+      "displayName": "SGreens ERP",
+      "category": "ERP · Business Operations",
+      "type": "Poultry farm operations ERP",
+      "status": "Production",
+      "statusDetail": "Production-oriented client product; documented frontend snapshot does not prove that exact checkout is the deployed artifact",
+      "featured": false,
+      "priority": 4,
+      "archiveCategory": "production",
+      "frame": "systems",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects/SGreens ERP.png",
+      "demo": false,
+      "oneLiner": "Poultry farm ERP — production, inventory, purchases, sales, hatchery, and accounts in one operations system.",
+      "description": "SGreens combines a public business presence with an authenticated operations console for managing poultry production, stock, commercial workflows, HR, and financial records across branches.",
+      "overview": "The operational application covers daily farm data across eggs, birds, feed, hatchery, meat, medicine, inventory, accounts and employees, with role-aware access to business modules.",
+      "problem": "A multi-branch poultry operation needs consistent operational records across production, purchases, sales, stock, employees and financial information rather than relying on disconnected manual processes.",
+      "solution": "An Angular operational interface with role-aware modules, REST service integration, dashboards, forms, tables, stock calculations, reports and business workflows.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend contributor on the Angular operations application.",
+      "backendContribution": "Consumed the separate REST backend; backend ownership is not claimed from the available frontend workspace.",
+      "ownership": [
+        "Frontend implementation across operational modules where personally confirmed.",
+        "Angular UI patterns for forms, tables and operational workflows.",
+        "REST API consumption.",
+        "Role-aware interface behaviour.",
+        "Operational data presentation."
+      ],
+      "features": [
+        "Operations dashboard",
+        "Production tracking",
+        "Egg management",
+        "Bird management",
+        "Feed management",
+        "Hatchery",
+        "Meat operations",
+        "Medicine management",
+        "Inventory",
+        "Accounts",
+        "Employee management",
+        "Purchase workflows",
+        "Sales workflows",
+        "Stock reporting",
+        "Role-based access"
+      ],
+      "modules": [
+        "Dashboard",
+        "Production",
+        "Eggs",
+        "Birds",
+        "Feed",
+        "Hatchery",
+        "Meat",
+        "Medicine",
+        "Inventory",
+        "Purchases",
+        "Sales",
+        "Accounts",
+        "Employees",
+        "Reports"
+      ],
+      "rolesSupported": [
+        "Admin",
+        "Supervisor",
+        "Worker"
+      ],
+      "stack": {
+        "frontend": [
+          "Angular",
+          "TypeScript",
+          "Angular Router",
+          "PrimeNG",
+          "Reactive Forms"
+        ],
+        "mobile": [],
+        "backend": [
+          "External REST backend"
+        ],
+        "database": [
+          "External backend persistence"
+        ],
+        "stateManagement": [
+          "Angular component/service state"
+        ],
+        "authentication": [
+          "JWT-based authentication"
+        ],
+        "payments": [],
+        "notifications": [],
+        "realtime": [],
+        "testing": [
+          "Angular/Karma/Jasmine scaffolding"
+        ],
+        "deployment": [
+          "Angular SPA",
+          "Hash routing"
+        ],
+        "other": []
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Role-based access across a large operational surface",
+          "description": "Multiple staff roles need different access to operational data and actions."
+        },
+        {
+          "title": "Cross-module stock consistency",
+          "description": "Inventory quantities and remaining stock appear across multiple operational modules, making consistency a core product concern."
+        },
+        {
+          "title": "Installment and due-payment workflows",
+          "description": "Operational purchase and payment flows need to represent outstanding amounts alongside business records."
+        },
+        {
+          "title": "Large operational data surfaces",
+          "description": "The ERP relies heavily on tables, pagination, filtering and search across business records."
+        }
+      ],
+      "architectureDecisions": [
+        "Angular SPA architecture.",
+        "Lazy-loaded operational/admin areas.",
+        "Per-resource service wrappers around REST APIs.",
+        "Reusable form/table/dialog patterns.",
+        "Interceptors for API base URL and authentication.",
+        "Client-side presentation and calculation of operational information."
+      ],
+      "impact": [
+        "Implemented a broad operational frontend for a real poultry business domain.",
+        "Covered multiple business departments inside one application.",
+        "Translated operational workflows into role-aware UI."
+      ],
+      "caseStudy": {
+        "heroTitle": "Poultry operations in one connected workspace",
+        "heroSubtitle": "Production, inventory, purchases, sales, and accounts — with role-aware access for farm staff.",
+        "context": "SGreens supports a multi-branch poultry business. Staff need consistent operational records across eggs, birds, feed, hatchery, medicine, inventory, and finance.",
+        "problem": "Disconnected manual processes make stock, purchases, and sales hard to reconcile. Different roles also need different levels of access to sensitive operations.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Angular frontend",
+          "Operational forms and tables",
+          "API integration",
+          "Role-aware UI",
+          "Operational data presentation"
+        ],
+        "approach": "The frontend is organized by business module — each department gets dedicated workflows built on shared form, table, and API patterns.",
+        "technicalImplementation": [
+          "Angular SPA",
+          "REST service layer",
+          "JWT-aware API integration",
+          "Reactive forms",
+          "Operational tables",
+          "Role-aware UI patterns"
+        ],
+        "engineeringDecisions": [
+          "Keep operational resources separated into feature/service boundaries.",
+          "Use shared form/table patterns across repeated business workflows."
+        ],
+        "production": "The project documentation indicates a production-oriented client system, while the available frontend checkout is not sufficient to prove that exact snapshot was the deployed artifact.",
+        "outcome": "A broad operational interface covering the core workflows of a poultry business, integrated with a separate REST backend."
+      },
+      "screenshots": [],
+      "portfolioPresentation": {
+        "homepageSummary": "Poultry operations ERP covering production, stock, purchases, sales and accounts.",
+        "workPageSummary": "Farm operations ERP covering production, stock, purchases, sales, and accounts.",
+        "caseStudyPriority": "medium",
+        "visualPriority": "high"
+      }
+    },
+    {
+      "slug": "sree-veeranjaneya-erp",
+      "name": "Sree Veeranjaneya ERP",
+      "displayName": "Sree Veeranjaneya ERP",
+      "category": "ERP · Manufacturing / Spare Parts",
+      "type": "Manufacturing and spare-parts operations ERP",
+      "status": "Production",
+      "statusDetail": "Production product with public domain and backend-connected operations; documented frontend checkout is a development copy",
+      "featured": false,
+      "priority": 5,
+      "archiveCategory": "production",
+      "frame": "systems",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": "https://sreeveeranjaneya.com/",
+      "image": "/Projects/Sree Veeranjaneya ERP.png",
+      "demo": false,
+      "oneLiner": "Industrial spare-parts platform — public catalog plus internal purchasing, quotations, dispatch, and production.",
+      "description": "Sree Veeranjaneya combines customer-facing product discovery with internal ERP modules for purchasing, sales, GST quotations, dispatch, production, and stock management.",
+      "overview": "The system supports both external product discovery and internal business operations, allowing staff to manage industrial parts and commercial workflows from one Angular application.",
+      "problem": "The business needed online product discovery alongside operational workflows such as GST quotations, stock, purchasing, sales, dispatch and production, with different staff roles accessing different parts of the system.",
+      "solution": "An Angular application combining a public catalog/cart experience with role-aware internal ERP modules, REST integrations, operational tables, quotation generation and production workflows.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend contributor on the Angular product and ERP interface.",
+      "backendContribution": "Frontend consumption of the REST API. Backend ownership is not claimed without separate confirmation.",
+      "ownership": [
+        "Frontend product implementation.",
+        "ERP module interfaces.",
+        "Public catalog and product presentation.",
+        "Operational forms and tables.",
+        "API integration.",
+        "Role-aware module presentation.",
+        "Commercial document workflows where personally confirmed."
+      ],
+      "features": [
+        "Public product catalog",
+        "Product details",
+        "Cart",
+        "Customer management",
+        "Vendor management",
+        "Purchasing / Inwards",
+        "Sales / Outwards",
+        "Dispatch",
+        "Pending Dispatch",
+        "Quotation Generator",
+        "GST calculations",
+        "Printable quotation PDF",
+        "Price tracker",
+        "Production",
+        "Stock Statement",
+        "Stock Reports",
+        "Manual/document libraries",
+        "Order management",
+        "Audit history"
+      ],
+      "modules": [
+        "Public website",
+        "Catalog",
+        "Cart",
+        "Customers",
+        "Vendors",
+        "Inwards",
+        "Outwards",
+        "Dispatch",
+        "Quotation Generator",
+        "Price Tracker",
+        "Production",
+        "Stock",
+        "Reports",
+        "Documents",
+        "Orders",
+        "Audit History"
+      ],
+      "rolesSupported": [
+        "Super Admin",
+        "Admin",
+        "Purchase",
+        "Sales",
+        "Store staff"
+      ],
+      "stack": {
+        "frontend": [
+          "Angular",
+          "TypeScript",
+          "Angular Router",
+          "Reactive Forms",
+          "PrimeNG"
+        ],
+        "mobile": [],
+        "backend": [
+          "External Java REST backend"
+        ],
+        "database": [
+          "External MySQL-backed backend"
+        ],
+        "stateManagement": [
+          "Angular services",
+          "Component state"
+        ],
+        "authentication": [
+          "Role-aware authenticated operations interface"
+        ],
+        "payments": [],
+        "notifications": [],
+        "realtime": [],
+        "testing": [],
+        "deployment": [
+          "Angular SPA"
+        ],
+        "other": [
+          "PDF/document generation",
+          "GST-aware commercial calculations"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Public catalog and ERP in one application",
+          "description": "The same Angular client has to support public product discovery and authenticated internal operations without making the two experiences feel disconnected."
+        },
+        {
+          "title": "Multi-role ERP access",
+          "description": "Different staff roles need access to different operational modules and actions."
+        },
+        {
+          "title": "Commercial quotation workflow",
+          "description": "Quotation creation spans customers, products, charges, transport, bank information, terms and GST calculations before producing a printable document."
+        },
+        {
+          "title": "Industrial operational data",
+          "description": "Purchasing, sales, dispatch and production workflows operate on large sets of structured business records."
+        }
+      ],
+      "architectureDecisions": [
+        "Angular SPA with public and authenticated application areas.",
+        "Resource-oriented service layer around REST APIs.",
+        "Role-aware UI and field/module permissions.",
+        "Reusable operational form/table patterns.",
+        "Paged operational data handling."
+      ],
+      "impact": [
+        "Combined public product discovery with internal business operations.",
+        "Covered commercial workflows from quotation through dispatch.",
+        "Provided a single interface for multiple operational roles."
+      ],
+      "caseStudy": {
+        "heroTitle": "Public catalog meets internal commercial ops",
+        "heroSubtitle": "Product discovery for customers. Quotations, stock, dispatch, and production for staff.",
+        "context": "The business is an industrial spare-parts manufacturer and stockist. Customers browse online; staff run commercial and production workflows inside the same application.",
+        "problem": "The same product must serve public discovery and authenticated ERP operations without feeling like two disconnected systems.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Angular product UI",
+          "Public catalog experience",
+          "ERP interfaces",
+          "Operational forms and tables",
+          "API integration",
+          "Commercial workflows"
+        ],
+        "approach": "I structured the Angular client around the business lifecycle — catalog outward, then purchasing, stock, quotation, sales, dispatch, and production inward.",
+        "technicalImplementation": [
+          "Angular",
+          "REST API services",
+          "Role-aware modules",
+          "Reactive forms",
+          "Operational tables",
+          "Quotation generation",
+          "GST-aware UI calculations"
+        ],
+        "engineeringDecisions": [
+          "Separate public and authenticated experiences while keeping them within one application.",
+          "Use reusable operational patterns for repeated ERP forms and tables."
+        ],
+        "production": "The public domain and backend-connected product indicate a real delivered system, while the documented frontend checkout should be treated as a development copy rather than automatically equated with the deployed artifact.",
+        "outcome": "One interface connecting public catalog functionality with internal commercial and production workflows."
+      },
+      "screenshots": [],
+      "portfolioPresentation": {
+        "homepageSummary": "Manufacturing ERP combining catalog, quotations, stock, production and dispatch.",
+        "workPageSummary": "Manufacturing ERP with catalog, quotations, stock, production, and dispatch.",
+        "caseStudyPriority": "medium",
+        "visualPriority": "high"
+      }
+    }
+  ],
+  "businessWebsites": [
+    {
+      "slug": "codestream",
+      "displayName": "CodeStream",
+      "industry": "IT Services",
+      "scope": "Business website / company presence",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://codestream.in",
+      "status": "Live",
+      "priority": 6,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/codestream-agency-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "whatwhyhowlearn",
+      "displayName": "WhatWhyHowLearn",
+      "industry": "Education",
+      "scope": "Education-focused business website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://whatwhyhowlearn.com/",
+      "status": "Active Development",
+      "priority": 7,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/whatwhyhowlearn-education-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "rcsquare",
+      "displayName": "RCSquare Technologies",
+      "industry": "Software Services",
+      "scope": "Software services company website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://www.rcsquaretech.com/",
+      "status": "Live",
+      "priority": 8,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/rcsquare-technologies-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "sree-veeranjaneya-industries",
+      "displayName": "Sree Veeranjaneya Industries",
+      "industry": "Manufacturing",
+      "scope": "Manufacturing business website and product presence",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://sreeveeranjaneya.com/",
+      "status": "Live",
+      "priority": 9,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/sree-veeranjaneya-industries-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "sgreens",
+      "displayName": "SGreens",
+      "industry": "Agriculture / Poultry",
+      "scope": "Agriculture/poultry business website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "http://sgreens.com/",
+      "status": "Live",
+      "priority": 10,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/sgreens-business-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "excel-education",
+      "displayName": "Excel Education",
+      "industry": "Education",
+      "scope": "Education business website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://excel-edu.com/",
+      "status": "Live",
+      "priority": 11,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/excel-education-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "bharat-infra-mart",
+      "displayName": "Bharat Infra Mart",
+      "industry": "Infrastructure",
+      "scope": "Infrastructure business website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://bharatinframart.com/",
+      "status": "Live",
+      "priority": 12,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/bharat-infra-mart-website.png",
+      "screenshots": []
+    },
+    {
+      "slug": "mig-dyno",
+      "displayName": "MIG Dyno",
+      "industry": "Engineering",
+      "scope": "Engineering business website",
+      "role": "Frontend Developer",
+      "stack": [],
+      "liveUrl": "https://migdyno.com/",
+      "status": "Live",
+      "priority": 13,
+      "archiveCategory": "websites",
+      "image": "/Projects Images/website/mig-dyno-website.png",
+      "screenshots": []
+    }
+  ],
+  "mobileApplications": [
+    {
+      "slug": "hero-app",
+      "name": "MyHero",
+      "displayName": "MyHero",
+      "category": "Mobile · Education Marketplace",
+      "type": "Parent–teacher class marketplace",
+      "status": "Ready for release",
+      "statusDetail": "Built hybrid mobile client with real API integrations — not yet published to app stores.",
+      "featured": false,
+      "priority": 14,
+      "archiveCategory": "mobile",
+      "frame": "product",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/Mobile/myhero-tutoring-marketplace-app-ui.png",
+      "demo": false,
+      "oneLiner": "Parent–teacher tutoring marketplace — discover educators, book classes, and track learning progress.",
+      "description": "MyHero is a hybrid mobile client for a children's tutoring marketplace. Parents manage children and book recurring classes; teachers manage students, schedules, goals, and class communication.",
+      "overview": "The application models a two-sided tutoring workflow with different experiences for parents and teachers, including profiles, educator discovery, availability, enrollment, schedules, comments, attachments and class cancellation.",
+      "problem": "Parents need to find educators and arrange recurring classes around teacher availability, while teachers need to accept requests and manage students and learning progress.",
+      "solution": "A dual-role mobile client connected to remote APIs, with Firebase authentication, educator discovery, custom availability scheduling, enrollment workflows and class/goal communication.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend/mobile contribution; exact personal authorship is not recoverable from the available repository snapshot.",
+      "backendContribution": "Frontend API integration only; AWS backend and upload services are external.",
+      "ownership": [
+        "Frontend product client if personally confirmed.",
+        "Parent and teacher product surfaces.",
+        "Enrollment and availability workflows.",
+        "API integration.",
+        "Cordova native integrations.",
+        "Authentication, camera and SMS integration where personally confirmed."
+      ],
+      "features": [
+        "Google login",
+        "Mobile OTP",
+        "Parent profiles",
+        "Children management",
+        "Teacher profiles",
+        "Teacher skill taxonomy",
+        "Educator discovery",
+        "Enrollment requests",
+        "Teacher availability calendar",
+        "Teacher invitations",
+        "Parent and teacher schedules",
+        "Class comments",
+        "Goal management",
+        "File attachments",
+        "Class cancellation",
+        "Parent/teacher role switching",
+        "Notifications"
+      ],
+      "modules": [
+        "Authentication",
+        "Parent onboarding",
+        "Teacher onboarding",
+        "Educator discovery",
+        "Enrollment",
+        "Availability",
+        "Schedules",
+        "Class communication",
+        "Goals",
+        "Notifications"
+      ],
+      "rolesSupported": [
+        "Parent",
+        "Teacher"
+      ],
+      "stack": {
+        "frontend": [
+          "Angular",
+          "TypeScript",
+          "Angular Router",
+          "Reactive Forms",
+          "Bootstrap",
+          "Angular Material",
+          "PrimeNG"
+        ],
+        "mobile": [
+          "Apache Cordova",
+          "cordova-plugin-camera",
+          "cordova-plugin-googleplus",
+          "cordova SMS plugins"
+        ],
+        "backend": [
+          "AWS API Gateway backend"
+        ],
+        "database": [
+          "Remote persistence",
+          "Firestore dependency initialized but unused in documented snapshot"
+        ],
+        "stateManagement": [
+          "localStorage",
+          "Component state"
+        ],
+        "authentication": [
+          "Firebase phone OTP",
+          "Google Sign-In",
+          "Local token persistence"
+        ],
+        "payments": [],
+        "notifications": [
+          "Notification API integration"
+        ],
+        "realtime": [],
+        "testing": [
+          "Karma",
+          "Jasmine"
+        ],
+        "deployment": [
+          "Angular build",
+          "Cordova Android build"
+        ],
+        "other": [
+          "Asarit image upload service",
+          "AWS S3 image hosting"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Dual-role product experience",
+          "description": "One identity can operate as both a parent and teacher, requiring the frontend to determine the appropriate product path and allow switching between roles."
+        },
+        {
+          "title": "Custom availability scheduling",
+          "description": "The parent experience derives bookable time slots from teacher availability and existing courses."
+        },
+        {
+          "title": "Mobile authentication",
+          "description": "The Cordova client combines Firebase OTP, Google login and SMS-based OTP handling."
+        },
+        {
+          "title": "Optimistic class communication",
+          "description": "Comments and goal communication use HTTP APIs while providing an immediate-feeling UI."
+        }
+      ],
+      "architectureDecisions": [
+        "Angular + Cordova for the mobile client.",
+        "Firebase for identity.",
+        "AWS API Gateway for product data.",
+        "localStorage for cross-screen application state.",
+        "Hash routing for the WebView environment.",
+        "Separate upload service for image/file handling."
+      ],
+      "impact": [
+        "Implemented a substantial dual-role tutoring marketplace client.",
+        "Connected parent and teacher workflows around a shared class lifecycle.",
+        "Created a custom availability and enrollment experience."
+      ],
+      "caseStudy": {
+        "heroTitle": "Parents and teachers, one class lifecycle",
+        "heroSubtitle": "Educator discovery, availability, enrollment, and class progress in a dual-role mobile client.",
+        "context": "MyHero connects parents and teachers around recurring classes. A single user can even operate as both parent and teacher, which shapes navigation and state handling.",
+        "problem": "Booking requires matching parent intent with teacher availability and existing courses — not a simple form submission.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Frontend product experience",
+          "Parent/teacher workflows",
+          "Enrollment",
+          "Availability",
+          "API integration",
+          "Mobile integrations"
+        ],
+        "approach": "The client follows the class lifecycle: discover, choose a slot, request enrollment, accept, then manage schedules and learning communication.",
+        "technicalImplementation": [
+          "Angular",
+          "Apache Cordova",
+          "Firebase authentication",
+          "AWS API integration",
+          "Custom availability calendar",
+          "localStorage-based cross-screen state",
+          "Native camera/SMS integrations"
+        ],
+        "engineeringDecisions": [
+          "Use a client-side role-selection experience for the parent/teacher model.",
+          "Derive availability from existing course windows.",
+          "Keep comments lightweight and optimistic without introducing realtime infrastructure."
+        ],
+        "production": "The repository contains a compiled Cordova build and real API integrations, but the available snapshot does not prove a final store release.",
+        "outcome": "A feature-rich marketplace client covering the main parent and teacher journeys, integrated with Firebase auth and AWS APIs."
+      },
+      "screenshots": [],
+      "appStoreLinks": {
+        "ios": null,
+        "android": null
+      }
+    },
+    {
+      "slug": "khetivala-app",
+      "name": "Khetivala App",
+      "displayName": "Khetivala App",
+      "category": "Mobile · KhetiValah",
+      "type": "React Native mobile client",
+      "status": "Ready for release",
+      "statusDetail": "Built React Native companion to the KhetiValah web platform — not yet published to app stores.",
+      "featured": false,
+      "priority": 15,
+      "archiveCategory": "mobile",
+      "frame": "product",
+      "timeline": "Dec 2023 – Jan 2024",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/Mobile/khetivala-app-agriculture-mobile-ui.png",
+      "demo": false,
+      "oneLiner": "React Native mobile client for KhetiValah — event discovery, vendor product workflows, and participation on the go.",
+      "description": "The Khetivala App is the mobile companion to the KhetiValah web platform. It gives vendors and participants mobile access to event discovery, catalog management, media uploads, and participation workflows connected to the same backend.",
+      "overview": "This is the mobile application — not the production web platform. It extends KhetiValah with native mobile flows for discovery, product creation, and event participation.",
+      "problem": "Event participants and vendors need mobile access to the same participation workflows available on the web, including multi-step product creation and media uploads in the field.",
+      "solution": "A React Native TypeScript client with feature modules, Context/useReducer state, AsyncStorage, and AgriEvents API integration.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend Product Engineer — mobile client for KhetiValah.",
+      "backendContribution": "Integrated external REST APIs; no backend ownership claimed.",
+      "ownership": [
+        "React Native application architecture.",
+        "Mobile navigation and screen map.",
+        "Home event discovery on mobile.",
+        "Five-step Add Product wizard.",
+        "My Products and vendor catalog on mobile.",
+        "Early Bird Offers and Stand Types mobile UI.",
+        "Image and PDF upload flows.",
+        "AsyncStorage session persistence.",
+        "Responsive mobile and tablet layouts.",
+        "AgriEvents REST API integration."
+      ],
+      "features": [
+        "Mobile event discovery",
+        "Vendor product creation wizard",
+        "Image and brochure uploads",
+        "My Products",
+        "Early Bird Offers",
+        "Stand Types",
+        "Orders and payment history views",
+        "OTP / Firebase auth infrastructure",
+        "English/Telugu localization"
+      ],
+      "modules": [
+        "Home",
+        "Events",
+        "Vendor Products",
+        "Early Bird Offers",
+        "Stand Types",
+        "Orders",
+        "Profile"
+      ],
+      "rolesSupported": [
+        "Vendor",
+        "Sponsor",
+        "Participant"
+      ],
+      "stack": {
+        "frontend": [
+          "React Native",
+          "React",
+          "TypeScript",
+          "React Navigation"
+        ],
+        "mobile": [
+          "Image picker",
+          "Document picker",
+          "RNFS",
+          "Blob utilities",
+          "Device information"
+        ],
+        "backend": [
+          "AgriEvents REST API"
+        ],
+        "database": [
+          "Remote persistence"
+        ],
+        "stateManagement": [
+          "Context",
+          "useReducer",
+          "AsyncStorage"
+        ],
+        "authentication": [
+          "Firebase/OTP infrastructure",
+          "JWT"
+        ],
+        "payments": [
+          "Razorpay",
+          "Manual payment evidence"
+        ],
+        "notifications": [],
+        "realtime": [],
+        "testing": [
+          "Jest"
+        ],
+        "deployment": [
+          "Android release configuration",
+          "iOS build configuration"
+        ],
+        "other": [
+          "English/Telugu localization"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Five-step vendor product workflow",
+          "description": "The product creation flow combines multiple validated steps with images, offers and PDF brochures."
+        },
+        {
+          "title": "Mixed media uploads",
+          "description": "Different media types need different upload handling and progress feedback."
+        },
+        {
+          "title": "API data transformation",
+          "description": "Some backend responses require client-side transformation before they can be presented as usable UI structures."
+        }
+      ],
+      "architectureDecisions": [
+        "Feature modules for product workflows.",
+        "Shared API service wrapper.",
+        "Context/useReducer for global session state.",
+        "AsyncStorage for persistence.",
+        "Step-based product creation."
+      ],
+      "impact": [
+        "Delivered a substantial mobile event-commerce experience.",
+        "Built the vendor catalog workflow from creation through product management."
+      ],
+      "caseStudy": {
+        "heroTitle": "KhetiValah on mobile",
+        "heroSubtitle": "React Native companion to the web platform — events, catalog, and uploads in the field.",
+        "context": "The Khetivala App is separate from the KhetiValah web production application. Web handles marketplace booking, Razorpay, and GST billing at platform scale; mobile focuses on native participation and vendor catalog workflows.",
+        "problem": "Vendors and participants needed a mobile-native way to manage products and engage with events away from the desktop.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "React Native architecture and navigation",
+          "Vendor product creation wizard",
+          "Native image and PDF uploads",
+          "Event discovery and catalog modules",
+          "AgriEvents API integration"
+        ],
+        "approach": "I built feature-based React Native modules with a step-based product wizard and native media upload handling, integrated with the same AgriEvents APIs as the web platform.",
+        "technicalImplementation": [
+          "React Native and TypeScript",
+          "React Navigation",
+          "Context and useReducer",
+          "AsyncStorage",
+          "Multipart image and PDF uploads",
+          "AgriEvents REST API",
+          "Firebase/OTP auth infrastructure"
+        ],
+        "engineeringDecisions": [
+          "Keep mobile scoped to field workflows — booking and platform billing stay on the web product.",
+          "Use a step-based wizard instead of one long form for vendor product creation.",
+          "Share API integration patterns with the web client without duplicating web-only payment flows."
+        ],
+        "production": "Mobile development/staging client with real API integration. Production web platform is documented under KhetiValah in Production Applications.",
+        "outcome": "A React Native companion that extends KhetiValah with mobile event discovery, vendor catalog management, and native media uploads."
+      },
+      "screenshots": [],
+      "appStoreLinks": {
+        "ios": null,
+        "android": null
+      }
+    },
+    {
+      "slug": "rdrtech-app",
+      "name": "RDR Tech App",
+      "displayName": "RDR Tech App",
+      "category": "Mobile · RDR Tech",
+      "type": "React Native mobile client",
+      "status": "Ready for release",
+      "statusDetail": "Built React Native companion to the RDR Tech web platform — not yet published to app stores.",
+      "featured": false,
+      "priority": 16,
+      "archiveCategory": "mobile",
+      "frame": "product",
+      "timeline": "Feb 2024 – Mar 2024",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/Mobile/rdr-tech-app-workflow-mobile-ui.png",
+      "demo": false,
+      "oneLiner": "React Native mobile client for RDR Tech — firm onboarding, KYC, membership, and operational modules on phone and tablet.",
+      "description": "The RDR Tech App is the mobile companion to the RDR Tech web workflow platform. It models firm onboarding, KYC, membership, and operational surfaces for professional-services teams on mobile devices.",
+      "overview": "This is the mobile application — not the production web platform. The web product handles real-time workflows and dashboards; mobile focuses on onboarding, KYC, and portable operational access.",
+      "problem": "Firm owners and staff need mobile access to onboarding, verification, and key operational views — with layouts that work on both phone and tablet.",
+      "solution": "A React Native client with Firebase authentication, native media capture, subscription UI, Razorpay helper integration, and tablet-aware layouts.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend Product Engineer — mobile client for RDR Tech.",
+      "backendContribution": "No backend ownership claimed.",
+      "ownership": [
+        "React Native screen map and navigation.",
+        "Reusable mobile UI system.",
+        "Firebase phone OTP and Google Sign-In.",
+        "KYC document and photo capture.",
+        "Subscription and coupon pricing UI.",
+        "Razorpay helper integration on mobile.",
+        "Phone and tablet responsive layouts.",
+        "Operations dashboard and business module surfaces on mobile.",
+        "Visual refinement across mobile screens."
+      ],
+      "features": [
+        "Phone OTP login",
+        "Google Sign-In",
+        "Business KYC registration",
+        "Document and photo capture",
+        "Approval status tracking",
+        "Subscription and membership UI",
+        "Coupon and pricing calculations",
+        "Mobile operations dashboard",
+        "Clients, projects, employees, and dues modules",
+        "Razorpay checkout preparation",
+        "Phone and tablet layouts"
+      ],
+      "modules": [
+        "Authentication",
+        "KYC",
+        "Membership",
+        "Dashboard",
+        "Clients",
+        "Projects",
+        "Employees",
+        "Dues"
+      ],
+      "rolesSupported": [
+        "Firm owner",
+        "Administrator",
+        "POC",
+        "Assistant"
+      ],
+      "stack": {
+        "frontend": [
+          "React Native",
+          "React",
+          "TypeScript",
+          "React Navigation"
+        ],
+        "mobile": [
+          "DeviceInfo",
+          "Permissions",
+          "Image picker",
+          "Document picker"
+        ],
+        "backend": [],
+        "database": [],
+        "stateManagement": [
+          "React Context",
+          "Local state"
+        ],
+        "authentication": [
+          "Firebase phone OTP",
+          "Google Sign-In"
+        ],
+        "payments": [
+          "Razorpay helper"
+        ],
+        "notifications": [],
+        "realtime": [],
+        "testing": [
+          "Jest"
+        ],
+        "deployment": [
+          "React Native Android/iOS build configuration"
+        ],
+        "other": []
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Multi-stage business onboarding",
+          "description": "The product flow moves from identity to KYC, approval and membership before operational access."
+        },
+        {
+          "title": "Phone and tablet layouts",
+          "description": "Operational screens were adapted to different device sizes and orientations."
+        },
+        {
+          "title": "Native authentication and media",
+          "description": "The client integrates Firebase authentication and device media capabilities."
+        }
+      ],
+      "architectureDecisions": [
+        "React Native with TypeScript.",
+        "Reusable UI primitives.",
+        "Minimal Context for OTP state.",
+        "Device-aware layouts."
+      ],
+      "impact": [
+        "Created a coherent mobile operations interface around a professional-services workflow."
+      ],
+      "caseStudy": {
+        "heroTitle": "RDR Tech on mobile",
+        "heroSubtitle": "React Native companion — KYC, membership, and firm ops on phone and tablet.",
+        "context": "The RDR Tech App is separate from the RDR Tech web production platform. Web handles real-time workflow operations; mobile handles onboarding, KYC, membership, and portable operational access.",
+        "problem": "Professional-services teams needed a mobile path through verification and membership before accessing operational work on smaller screens.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "React Native screen map and navigation",
+          "Firebase OTP and Google Sign-In",
+          "KYC document and photo capture",
+          "Subscription and membership UI",
+          "Tablet-aware operational layouts"
+        ],
+        "approach": "I built a workflow-oriented mobile UI with minimal auth context for OTP handoff, native media integrations, and shared tablet layout logic.",
+        "technicalImplementation": [
+          "React Native and TypeScript",
+          "React Navigation",
+          "Firebase phone OTP and Google Sign-In",
+          "Native image and document pickers",
+          "Razorpay helper integration",
+          "Tablet-aware responsive layouts"
+        ],
+        "engineeringDecisions": [
+          "Keep real-time workflow dashboards on the web product; mobile focuses on onboarding and portable ops.",
+          "Use minimal Context for OTP handoff instead of over-centralizing mobile state.",
+          "Share tablet layout logic across operational screens for consistent phone and tablet use."
+        ],
+        "production": "Mobile development client. Production web workflow platform is documented under RDR Tech in Production Applications.",
+        "outcome": "A React Native companion for firm onboarding, KYC, membership, and operational access on phone and tablet."
+      },
+      "screenshots": [],
+      "appStoreLinks": {
+        "ios": null,
+        "android": null
+      }
+    },
+    {
+      "slug": "cs-menu-scanner",
+      "name": "CS Menu Scanner",
+      "displayName": "CS Menu Scanner",
+      "category": "Mobile · Menu Scanner",
+      "type": "QR digital menu ecosystem",
+      "status": "Ready for release",
+      "statusDetail": "Built multi-app QR menu ecosystem — not yet published to app stores.",
+      "featured": false,
+      "priority": 17,
+      "archiveCategory": "mobile",
+      "frame": "product",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/Mobile/cs-menu-scanner-qr-menu-app-ui.png",
+      "demo": false,
+      "oneLiner": "QR digital menus for restaurants — owners manage items; guests scan and browse on their phone.",
+      "description": "CS Menu Scanner is a restaurant product ecosystem. Owners manage categories, items, and QR materials on the admin side; diners scan a code to view the current menu.",
+      "overview": "The product is an ecosystem rather than one isolated app: an owner/admin experience manages the menu while a diner-facing experience displays the restaurant-specific menu.",
+      "problem": "Restaurants need a way to maintain a digital menu and share it through QR codes so guests can access current menu information without relying on static printed menus.",
+      "solution": "A multi-application product connected to a shared menu backend, with restaurant management on the admin side and QR-driven guest menu viewing.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend/mobile contributor across the Menu Scanner application ecosystem.",
+      "backendContribution": "Frontend integration with the shared menu backend. Backend ownership is not claimed without separate evidence.",
+      "ownership": [
+        "Admin-side mobile menu management experience.",
+        "Menu/category/item interfaces where personally confirmed.",
+        "QR/menu presentation workflows.",
+        "Frontend API integration.",
+        "Mobile UI implementation."
+      ],
+      "relatedApplications": [
+        {
+          "name": "Menu Scanner Admin",
+          "platform": "Ionic Angular / Cordova",
+          "purpose": "Restaurant-owner menu management and subscription experience"
+        },
+        {
+          "name": "Menu Scanner User",
+          "platform": "Hybrid mobile/web",
+          "purpose": "Guest-facing QR menu experience"
+        },
+        {
+          "name": "Menu Scanner Admin Web",
+          "platform": "Web",
+          "purpose": "Administrative/menu management experience"
+        }
+      ],
+      "features": [
+        "Restaurant registration",
+        "Menu categories",
+        "Menu items",
+        "QR code generation",
+        "Guest menu viewing",
+        "Availability-aware menu display",
+        "Subscription UI",
+        "OTP/authentication",
+        "Restaurant-specific menu binding"
+      ],
+      "modules": [
+        "Restaurant onboarding",
+        "Authentication",
+        "Menu management",
+        "Category management",
+        "Item management",
+        "QR generation",
+        "Guest menu",
+        "Subscription"
+      ],
+      "rolesSupported": [
+        "Restaurant owner/admin",
+        "Guest/diner"
+      ],
+      "stack": {
+        "frontend": [
+          "Ionic",
+          "Angular",
+          "TypeScript"
+        ],
+        "mobile": [
+          "Cordova",
+          "Android"
+        ],
+        "backend": [
+          "Shared csmenu REST API"
+        ],
+        "database": [
+          "External backend persistence"
+        ],
+        "stateManagement": [
+          "Angular component/service state"
+        ],
+        "authentication": [
+          "OTP/authentication flows"
+        ],
+        "payments": [
+          "Subscription/payment-related UI"
+        ],
+        "notifications": [],
+        "realtime": [],
+        "testing": [],
+        "deployment": [
+          "Cordova Android build configuration"
+        ],
+        "other": [
+          "QR-based restaurant binding"
+        ]
+      },
+      "engineeringChallenges": [
+        {
+          "title": "One product, multiple applications",
+          "description": "Restaurant owners and diners require different interfaces while still operating on the same restaurant/menu data model."
+        },
+        {
+          "title": "Reliable restaurant-to-menu binding",
+          "description": "The QR flow needs to identify the correct restaurant and load its menu."
+        },
+        {
+          "title": "Availability-aware menu",
+          "description": "The guest experience needs to represent menu availability rather than simply displaying a static list."
+        }
+      ],
+      "architectureDecisions": [
+        "Separate owner/admin and guest experiences.",
+        "Use a shared REST backend contract.",
+        "Use QR data to connect the guest experience to a restaurant-specific menu."
+      ],
+      "impact": [
+        "Created a digital-menu experience spanning restaurant administration and guest consumption."
+      ],
+      "caseStudy": {
+        "heroTitle": "QR menus that stay current",
+        "heroSubtitle": "Restaurant owners update menus digitally; guests access them instantly — no app download required.",
+        "context": "Printed menus go stale. Restaurants need a simple way to publish changes and share them at the table.",
+        "problem": "Owner and guest experiences are fundamentally different but must share one menu data model and stay in sync.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Frontend/mobile UI",
+          "Menu management surfaces",
+          "QR-driven experience",
+          "API integration"
+        ],
+        "approach": "I treated admin and guest apps as two sides of one product, connected through a shared API and QR-based restaurant binding.",
+        "technicalImplementation": [
+          "Ionic/Angular",
+          "Cordova",
+          "REST API",
+          "Restaurant-specific QR binding",
+          "Menu/category/item interfaces"
+        ],
+        "engineeringDecisions": [
+          "Separate owner and guest experiences around the same menu contract.",
+          "Keep the QR identifier as the bridge between the physical restaurant and digital menu."
+        ],
+        "production": "Production-oriented ecosystem; exact store publication is not established in the available repository evidence.",
+        "outcome": "A multi-application digital menu product linking restaurant administration to guest consumption."
+      },
+      "screenshots": [],
+      "appStoreLinks": {
+        "ios": null,
+        "android": null
+      }
+    }
+  ],
+  "nonProductionApplications": [
+    {
+      "slug": "optimo-logix",
+      "name": "Optimo Logix",
+      "displayName": "Optimo Logix",
+      "category": "Non-Production Application",
+      "type": "Internal admin / operations dashboard prototype",
+      "status": "Non-Production",
+      "statusDetail": "Frontend-only prototype with mock data",
+      "featured": false,
+      "priority": 18,
+      "archiveCategory": "non-production",
+      "frame": "product",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/NonProduction/optimo-logix-logistics-web-ui.png",
+      "demo": false,
+      "oneLiner": "Operations dashboard prototype — KPIs, inventory, orders, and customers for a logistics product concept.",
+      "description": "Optimo Logix explores how an operations team would view products, orders, inventory, customers, and analytics in one admin interface.",
+      "overview": "The prototype explores the interface layer for an operations product, focusing on dashboard composition and operational information architecture.",
+      "problem": "Operations users need a central interface for viewing business KPIs and working with products, orders, inventory and customers.",
+      "solution": "A branded dashboard prototype with operational navigation, tables, charts and reusable UI patterns.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend product UI implementation.",
+      "backendContribution": "",
+      "ownership": [
+        "Dashboard UI",
+        "Operational navigation",
+        "Tables and cards",
+        "Inventory presentation",
+        "Prototype information architecture"
+      ],
+      "features": [
+        "Login",
+        "Dashboard",
+        "KPI cards",
+        "Charts",
+        "Products",
+        "Orders",
+        "Inventory",
+        "Customers",
+        "Analytics",
+        "Settings"
+      ],
+      "modules": [
+        "Authentication UI",
+        "Dashboard",
+        "Products",
+        "Orders",
+        "Inventory",
+        "Customers",
+        "Analytics",
+        "Settings"
+      ],
+      "rolesSupported": [
+        "Admin"
+      ],
+      "stack": {
+        "frontend": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "shadcn/ui"
+        ],
+        "mobile": [],
+        "backend": [],
+        "database": [],
+        "stateManagement": [
+          "Local state"
+        ],
+        "authentication": [
+          "Demo login UI"
+        ],
+        "payments": [],
+        "notifications": [],
+        "realtime": [],
+        "testing": [],
+        "deployment": []
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Translating an operations model into a dashboard",
+          "description": "The prototype organizes products, orders, inventory, customers and analytics into a coherent operational navigation."
+        }
+      ],
+      "architectureDecisions": [
+        "Reusable dashboard UI primitives.",
+        "Feature-oriented page structure."
+      ],
+      "impact": [
+        "Demonstrates product UI composition and operations-dashboard thinking."
+      ],
+      "caseStudy": {
+        "heroTitle": "Operations dashboard — product UI exploration",
+        "heroSubtitle": "How dense operational information can be grouped without overwhelming the user.",
+        "context": "This is a frontend prototype using mock data to explore information architecture for a logistics operations product.",
+        "problem": "Operations software must surface KPIs, tables, and charts without burying the user in noise.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Dashboard UI",
+          "Operational navigation",
+          "Tables",
+          "Charts",
+          "Prototype information architecture"
+        ],
+        "approach": "Reusable dashboard primitives and feature-oriented pages keep repeated patterns consistent across modules.",
+        "technicalImplementation": [
+          "React/Next.js",
+          "Reusable UI components",
+          "Dashboard layouts",
+          "Operational tables"
+        ],
+        "engineeringDecisions": [
+          "Use reusable UI primitives for repeated operational patterns."
+        ],
+        "production": "Non-production frontend prototype using mock data.",
+        "outcome": "A clear demonstration of dashboard composition and operations-product UI thinking — explicitly non-production."
+      },
+      "screenshots": []
+    },
+    {
+      "slug": "school-admin-pro",
+      "name": "School Admin Pro",
+      "displayName": "School Admin Pro",
+      "category": "Non-Production Application",
+      "type": "Multi-school administration web prototype",
+      "status": "Non-Production",
+      "statusDetail": "Angular UI prototype with static mock data",
+      "featured": false,
+      "priority": 19,
+      "archiveCategory": "non-production",
+      "frame": "systems",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/NonProduction/school-admin-pro-education-admin-ui.png",
+      "demo": false,
+      "oneLiner": "Multi-school admin prototype — platform operators oversee schools, staff, and student records.",
+      "description": "School Admin Pro models the super-admin layer of an education platform: schools as the primary context, with views into administrators, students, and accountants.",
+      "overview": "The interface models a platform operator's view across schools, school administrators, students and accountants.",
+      "problem": "A multi-school platform operator needs a central place to oversee schools and school-level administrative information.",
+      "solution": "A structured Angular admin interface organized around school-scoped operational information.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend product UI implementation.",
+      "backendContribution": "",
+      "ownership": [
+        "School administration UI",
+        "School-scoped information architecture",
+        "Tables and detail surfaces",
+        "Admin navigation"
+      ],
+      "features": [
+        "School listing",
+        "School details",
+        "School administration views",
+        "Student information views",
+        "Accountant information views",
+        "Super-admin navigation"
+      ],
+      "modules": [
+        "Schools",
+        "School Admins",
+        "Students",
+        "Accountants"
+      ],
+      "rolesSupported": [
+        "Super Admin"
+      ],
+      "stack": {
+        "frontend": [
+          "Angular",
+          "TypeScript"
+        ],
+        "mobile": [],
+        "backend": [],
+        "database": [],
+        "stateManagement": [
+          "Local component state"
+        ],
+        "authentication": [],
+        "payments": [],
+        "notifications": [],
+        "realtime": [],
+        "testing": [
+          "Angular test scaffolding"
+        ],
+        "deployment": []
+      },
+      "engineeringChallenges": [
+        {
+          "title": "School-scoped information architecture",
+          "description": "The UI needs to make it easy for a platform administrator to move from the overall school list into school-specific operational information."
+        }
+      ],
+      "architectureDecisions": [
+        "Angular SPA structure.",
+        "School-centered navigation.",
+        "Reusable administrative UI patterns."
+      ],
+      "impact": [
+        "Demonstrates ability to translate a multi-school operations model into a structured admin UI."
+      ],
+      "caseStudy": {
+        "heroTitle": "Multi-school admin — school as the hub",
+        "heroSubtitle": "Platform operators navigate from school list to school-specific operational detail.",
+        "context": "A multi-school platform needs a central administration layer before drilling into each school's information.",
+        "problem": "Generic admin screens do not reflect how platform operators actually think — school first, then people and records.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Angular frontend",
+          "School hub",
+          "Admin navigation",
+          "School-scoped views"
+        ],
+        "approach": "Navigation and page structure are organized around the school as the primary entity.",
+        "technicalImplementation": [
+          "Angular",
+          "TypeScript",
+          "Administrative layouts",
+          "Static prototype data"
+        ],
+        "engineeringDecisions": [
+          "Use school-scoped navigation as the primary information architecture."
+        ],
+        "production": "Non-production UI prototype with static mock data.",
+        "outcome": "A focused admin UI prototype demonstrating multi-tenant information architecture — non-production."
+      },
+      "screenshots": []
+    },
+    {
+      "slug": "annotation-tool",
+      "name": "Annotation Tool",
+      "displayName": "Annotation Tool",
+      "category": "Non-Production Application",
+      "type": "Image annotation / computer-vision data labeling tool",
+      "status": "Non-Production",
+      "statusDetail": "Internal/enterprise frontend prototype",
+      "featured": false,
+      "priority": 20,
+      "archiveCategory": "non-production",
+      "frame": "product",
+      "timeline": "",
+      "teamSize": null,
+      "liveUrl": null,
+      "image": "/Projects Images/NonProduction/annotation-tool-labeling-web-ui.png",
+      "demo": false,
+      "oneLiner": "Image annotation workspace for computer-vision datasets — bounding boxes on a visual canvas.",
+      "description": "Annotation Tool is a specialized web interface for labeling images, particularly object-detection workflows using bounding boxes.",
+      "overview": "The product focuses on the interface required to inspect images and create annotation data for machine-learning workflows.",
+      "problem": "Dataset annotation requires a focused workspace for viewing images and creating structured labels accurately.",
+      "solution": "A web-based annotation interface centered around image inspection and labeling workflows.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend product UI contribution; personal authorship is not proven by the available repository snapshot.",
+      "backendContribution": "Not established.",
+      "ownership": [
+        "Annotation UI",
+        "Image-labeling interface",
+        "Frontend interaction model",
+        "Admin/navigation surfaces where confirmed"
+      ],
+      "features": [
+        "Image annotation",
+        "Bounding-box labeling",
+        "Image workspace",
+        "Admin/navigation UI",
+        "Annotation-focused interaction"
+      ],
+      "modules": [
+        "Login",
+        "Annotation workspace",
+        "Admin navigation"
+      ],
+      "rolesSupported": [
+        "Annotator",
+        "Admin"
+      ],
+      "stack": {
+        "frontend": [
+          "React",
+          "JavaScript"
+        ],
+        "mobile": [],
+        "backend": [],
+        "database": [],
+        "stateManagement": [
+          "Local component state"
+        ],
+        "authentication": [
+          "Login UI"
+        ],
+        "payments": [],
+        "notifications": [],
+        "realtime": [],
+        "testing": [],
+        "deployment": []
+      },
+      "engineeringChallenges": [
+        {
+          "title": "Image-focused interaction",
+          "description": "Annotation interfaces require interaction around the image itself rather than conventional forms and tables."
+        },
+        {
+          "title": "Structured labeling",
+          "description": "The UI needs to represent visual annotations as structured data suitable for computer-vision workflows."
+        }
+      ],
+      "architectureDecisions": [
+        "Image-first workspace.",
+        "Annotation-specific interaction patterns.",
+        "Separate administrative navigation from the core labeling surface."
+      ],
+      "impact": [
+        "Demonstrates ability to work on specialized product interfaces outside conventional CRUD/dashboard patterns."
+      ],
+      "caseStudy": {
+        "heroTitle": "Annotation UI — image as the workspace",
+        "heroSubtitle": "A focused interface for turning images into structured training data.",
+        "context": "Dataset annotation is not a CRUD app. The image is the primary workspace; controls support the labeling task.",
+        "problem": "Annotators need precision and focus — conventional forms and tables get in the way.",
+        "role": "Frontend Product Engineer",
+        "ownership": [
+          "Annotation UI",
+          "Image interaction",
+          "Admin/navigation surfaces"
+        ],
+        "approach": "The product is built image-first, with annotation interactions at the center and admin navigation kept separate.",
+        "technicalImplementation": [
+          "React",
+          "Image annotation UI",
+          "Bounding-box workflow"
+        ],
+        "engineeringDecisions": [
+          "Prioritize the image workspace over conventional dashboard patterns."
+        ],
+        "production": "Non-production/internal prototype.",
+        "outcome": "A specialized product UI demonstrating image-based interaction — internal/non-production work."
+      },
+      "screenshots": []
+    }
+  ]
+}
