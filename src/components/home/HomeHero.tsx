@@ -73,8 +73,8 @@ export function HomeHero() {
         <div
           className={[
             "relative z-[2] order-first mx-auto w-full max-w-[22rem] text-center",
-            "lg:absolute lg:left-[clamp(1.5rem,3vw,3.5rem)] lg:top-[32%] lg:order-none lg:mx-0 lg:w-[min(100%,380px)] lg:max-w-none lg:text-left",
-            "xl:top-[34%] xl:w-[min(100%,400px)]",
+            "lg:absolute lg:left-[clamp(1.5rem,3vw,3.5rem)] lg:top-[25%] lg:order-none lg:mx-0 lg:w-[min(100%,380px)] lg:max-w-none lg:text-left",
+            "xl:top-[27%] xl:w-[min(100%,400px)]",
           ].join(" ")}
         >
           <span className="mx-auto mb-3 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-white/80 px-3.5 py-2 text-[13px] leading-none text-ink-secondary shadow-[var(--shadow-sm)] backdrop-blur-sm sm:px-4 sm:py-2.5 sm:text-[13.5px] lg:mx-0 lg:mb-3.5">
