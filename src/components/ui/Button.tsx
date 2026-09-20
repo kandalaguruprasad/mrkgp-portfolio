@@ -62,6 +62,7 @@ export function ButtonLink({
   children,
   external,
   arrow,
+  download,
 }: {
   href: string;
   variant?: Variant;
@@ -70,6 +71,7 @@ export function ButtonLink({
   children: ReactNode;
   external?: boolean;
   arrow?: boolean;
+  download?: boolean | string;
 }) {
   const cls = `${base} group ${variants[variant]} ${sizes[size]} ${className}`;
   const content = (
@@ -84,11 +86,23 @@ export function ButtonLink({
     </>
   );
 
-  if (external || href.startsWith("mailto:") || href.startsWith("http") || href.startsWith("#")) {
+  if (
+    download ||
+    external ||
+    href.startsWith("mailto:") ||
+    href.startsWith("http") ||
+    href.startsWith("#")
+  ) {
     return (
       <a
         href={href}
         className={cls}
+        {...(download
+          ? {
+              download:
+                typeof download === "string" ? download : true,
+            }
+          : {})}
         {...(href.startsWith("http")
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}

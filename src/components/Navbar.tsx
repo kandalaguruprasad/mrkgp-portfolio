@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
+import { person } from "@/lib/content";
 
 const links = [
   { href: "/", label: "Home", match: "/", exact: true },
@@ -78,12 +79,15 @@ function DesktopPill() {
           );
         })}
       </div>
-      <Link
-        href="/contact"
-        className="rounded-full bg-accent px-[17px] py-[9px] text-[13.5px] font-medium text-white transition-[transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-px hover:shadow-[0_6px_18px_rgba(20,22,26,0.24)]"
+      <a
+        href={person.resume}
+        download="Kandala_Guruprasad_Resume.pdf"
+        aria-label="Download resume"
+        className="inline-flex items-center gap-1.5 rounded-full bg-accent px-[15px] py-[9px] text-[13.5px] font-medium text-white transition-[transform,box-shadow] duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-px hover:shadow-[0_6px_18px_rgba(20,22,26,0.24)]"
       >
-        Get in touch
-      </Link>
+        <Download className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
+        Resume
+      </a>
     </nav>
   );
 }
@@ -133,13 +137,16 @@ function MobileBar({ pathname }: { pathname: string }) {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
+          <a
+            href={person.resume}
+            download="Kandala_Guruprasad_Resume.pdf"
             onClick={() => setOpen(false)}
-            className="mt-1 block rounded-[var(--radius-control)] bg-accent px-4 py-3 text-center text-sm font-medium text-white"
+            aria-label="Download resume"
+            className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-control)] bg-accent px-4 py-3 text-sm font-medium text-white"
           >
-            Get in touch
-          </Link>
+            <Download className="h-4 w-4" strokeWidth={2.25} aria-hidden />
+            Resume
+          </a>
         </div>
       ) : null}
     </div>

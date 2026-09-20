@@ -170,7 +170,7 @@ export default function ContactPage() {
                           className="dc-pulse h-1.5 w-1.5 rounded-full bg-status shadow-[0_0_0_3px_rgba(34,170,99,0.25)]"
                           aria-hidden
                         />
-                        Open to roles · {person.workMode.join(" or ")}
+                        {person.openToWork}
                       </span>
                     </div>
 

@@ -77,6 +77,13 @@ export function HomeHero() {
             "xl:top-[34%] xl:w-[min(100%,400px)]",
           ].join(" ")}
         >
+          <span className="mx-auto mb-3 inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-white/80 px-3.5 py-2 text-[13px] leading-none text-ink-secondary shadow-[var(--shadow-sm)] backdrop-blur-sm sm:px-4 sm:py-2.5 sm:text-[13.5px] lg:mx-0 lg:mb-3.5">
+            <span
+              className="dc-pulse h-1.5 w-1.5 shrink-0 rounded-full bg-status shadow-[0_0_0_3px_rgba(34,170,99,0.25)]"
+              aria-hidden
+            />
+            {person.openToWork}
+          </span>
           <p className="text-[1.25rem] font-medium italic leading-none tracking-[-0.02em] text-blue sm:text-[1.35rem] lg:text-[clamp(1.4rem,2vw,2.15rem)]">
             Hello, I&apos;m
           </p>

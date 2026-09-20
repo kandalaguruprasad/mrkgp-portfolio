@@ -6,7 +6,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import ConditionalLayout from "@/components/ConditionalLayout";
 import { ProtectMedia } from "@/components/ProtectMedia";
+import { person } from "@/lib/content";
 import {
+  absoluteUrl,
   DEFAULT_KEYWORDS,
   OG_IMAGE,
   SITE_NAME,
@@ -39,8 +41,8 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
-  name: "Kandala Guruprasad",
-  givenName: "Guruprasad",
+  name: person.name,
+  givenName: person.preferredName,
   familyName: "Kandala",
   alternateName: [
     "mrkgp",
@@ -57,9 +59,9 @@ const personJsonLd = {
   ],
   url: SITE_URL,
   image: `${SITE_URL}/kgp-profile.png`,
-  jobTitle: "Frontend Product Engineer",
+  jobTitle: person.professionalRole,
   description:
-    "Kandala Guruprasad (KGP / mrkgp) — Frontend Product Engineer building production React and Next.js product interfaces across SaaS, marketplaces, workflow systems, and ERP.",
+    `${person.name} (KGP / mrkgp) — ${person.professionalRole} building production React and Next.js product interfaces across SaaS, marketplaces, workflow systems, and ERP. ${person.openToWork}.`,
   worksFor: {
     "@type": "Organization",
     name: "Code Stream Technology Pvt Ltd",
@@ -70,13 +72,8 @@ const personJsonLd = {
     addressRegion: "Andhra Pradesh",
     addressCountry: "IN",
   },
-  email: "kandalaguruprasad@gmail.com",
-  sameAs: [
-    "https://www.linkedin.com/in/guruprasad-kandala-623a45311/",
-    "https://github.com/kandalaguruprasad",
-    "https://www.instagram.com/mrkgp_01/",
-    SITE_URL,
-  ],
+  email: person.email,
+  sameAs: [person.linkedin, person.github, person.instagram, SITE_URL],
   knowsAbout: [
     "React",
     "Next.js",
@@ -99,7 +96,7 @@ const websiteJsonLd = {
   alternateName: ["KGP", "Kandala Guruprasad", "mrKGP", "kgp"],
   url: SITE_URL,
   description:
-    "Official portfolio of Kandala Guruprasad (KGP) — mrkgp.com. Frontend Product Engineer.",
+    `Official portfolio of ${person.name} (KGP) — mrkgp.com. ${person.professionalRole}. ${person.openToWork}.`,
   inLanguage: "en-IN",
   publisher: { "@id": `${SITE_URL}/#person` },
   creator: { "@id": `${SITE_URL}/#person` },
@@ -116,7 +113,7 @@ const profilePageJsonLd = {
   "@type": "ProfilePage",
   "@id": `${SITE_URL}/#profilepage`,
   url: SITE_URL,
-  name: "Kandala Guruprasad (KGP) | mrkgp",
+  name: `${person.name} (KGP) | mrkgp`,
   mainEntity: { "@id": `${SITE_URL}/#person` },
   about: { "@id": `${SITE_URL}/#person` },
 };
@@ -125,9 +122,9 @@ const homeTitle =
   "Kandala Guruprasad (KGP) | mrkgp | Frontend Product Engineer";
 
 const metaDescription =
-  "Kandala Guruprasad (KGP / mrkgp) — Frontend Product Engineer building production product interfaces with React, Next.js & TypeScript. " +
-  "SaaS, marketplaces, workflow systems, and ERP — from requirements through deployment. " +
-  "Portfolio: mrkgp.com.";
+  `Kandala Guruprasad (KGP / mrkgp) — Frontend Product Engineer building production product interfaces with React, Next.js & TypeScript. ` +
+  `${person.openToWork}. SaaS, marketplaces, workflow systems, and ERP. ` +
+  `Portfolio & resume: mrkgp.com.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -140,9 +137,9 @@ export const metadata: Metadata = {
   description: metaDescription,
   keywords: [...DEFAULT_KEYWORDS],
   applicationName: SITE_NAME,
-  authors: [{ name: "Kandala Guruprasad", url: SITE_URL }],
-  creator: "Kandala Guruprasad",
-  publisher: "Kandala Guruprasad",
+  authors: [{ name: person.name, url: SITE_URL }],
+  creator: person.name,
+  publisher: person.name,
   category: "portfolio",
 
   openGraph: {
@@ -195,6 +192,10 @@ export const metadata: Metadata = {
     apple: [
       { url: "/mrkgp-favicon.png", sizes: "512x512", type: "image/png" },
     ],
+  },
+
+  other: {
+    "resume": absoluteUrl(person.resume),
   },
 };
 

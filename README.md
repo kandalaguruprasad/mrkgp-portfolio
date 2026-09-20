@@ -168,7 +168,7 @@ Case-study-specific fields (e.g. `workflowSteps`, `builtAreas`, `decisionDetails
 
 - Website: [mrkgp.com](https://mrkgp.com)
 - Email: kandalaguruprasad@gmail.com
-- LinkedIn: [Guruprasad Kandala](https://www.linkedin.com/in/guruprasad-kandala-623a45311/)
+- LinkedIn: [Guruprasad Kandala](https://www.linkedin.com/in/mrkgp/)
 - GitHub: [@kandalaguruprasad](https://github.com/kandalaguruprasad)
 - Instagram: [@mrkgp_01](https://www.instagram.com/mrkgp_01/)
 

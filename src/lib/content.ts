@@ -23,14 +23,16 @@ export const person = {
   professionalRole: "Frontend Product Engineer",
   primaryFocus: "Frontend-first. Product-minded. Full-stack capable.",
   location: "Tirupati, India",
+  openToWork: "Open to roles · On-site or Remote",
   availability:
     "I'm open to product-focused engineering opportunities where frontend ownership, product thinking, and real engineering problems matter.",
   workMode: ["On-site", "Remote"] as const,
   email: "kandalaguruprasad@gmail.com",
-  linkedin: "https://www.linkedin.com/in/guruprasad-kandala-623a45311/",
+  linkedin: "https://www.linkedin.com/in/mrkgp/",
   github: "https://github.com/kandalaguruprasad",
   instagram: "https://www.instagram.com/mrkgp_01/",
   website: "https://mrkgp.com",
+  resume: "/Kandala_Guruprasad_Resume.pdf",
   tagline: "Keep Moving Forward",
   whatsapp: "https://wa.me/919963040110?text=Hi%20KGP%2C%20I%27d%20like%20to%20discuss%20a%20role%20or%20project.",
 } as const;

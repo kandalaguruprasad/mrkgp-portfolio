@@ -14,6 +14,11 @@ const elsewhere = [
   { href: `mailto:${person.email}`, label: "Email" },
   { href: person.linkedin, label: "LinkedIn", external: true },
   { href: person.github, label: "GitHub", external: true },
+  {
+    href: person.resume,
+    label: "Resume",
+    download: "Kandala_Guruprasad_Resume.pdf",
+  },
 ];
 
 export default function Footer() {
@@ -47,6 +52,9 @@ export default function Footer() {
                 href={l.href}
                 {...(l.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+                {...("download" in l && l.download
+                  ? { download: l.download }
                   : {})}
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >

@@ -27,6 +27,8 @@ export const SUPPORTING_KEYWORDS = [
   "kgp portfolio",
   "Kandala Guruprasad portfolio",
   "Kandala Guruprasad Frontend Product Engineer",
+  "Hire Frontend Product Engineer",
+  "Open to work Frontend Engineer",
 ] as const;
 
 export const DEFAULT_KEYWORDS = [
