@@ -215,8 +215,11 @@ export function ChapteredCaseStudy({
 
           <div className="mt-10 grid gap-px overflow-hidden rounded-[var(--radius-md)] border border-line-strong bg-line-strong sm:grid-cols-2 lg:grid-cols-4">
             {meta.map((m) => (
-              <div key={m.label} className="bg-surface px-6 py-[22px]">
-                <span className="text-mono text-[9.5px] uppercase tracking-[0.13em] text-ink-muted">
+              <div
+                key={m.label}
+                className="flex flex-col justify-center bg-surface px-6 py-[22px]"
+              >
+                <span className="block text-mono text-[9.5px] uppercase tracking-[0.13em] text-ink-muted">
                   {m.label}
                 </span>
                 {"href" in m && m.href ? (
@@ -224,13 +227,15 @@ export function ChapteredCaseStudy({
                     href={m.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1.5 inline-flex items-center gap-1 text-[15px] text-blue hover:text-ink"
+                    className="mt-1.5 inline-flex w-fit items-center gap-1 text-[15px] text-blue hover:text-ink"
                   >
                     {m.value}
-                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
                   </a>
                 ) : (
-                  <span className="mt-1.5 block text-[15px] text-ink">{m.value}</span>
+                  <span className="mt-1.5 block text-[15px] leading-snug text-ink">
+                    {m.value}
+                  </span>
                 )}
               </div>
             ))}
