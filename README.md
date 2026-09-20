@@ -17,7 +17,7 @@ Editorial, product-focused site for production web products, mobile apps, busine
 - **Static export** — deployable to Vercel, Cloudflare Pages, GitHub Pages, or any static host (`out/` after build).
 - **Work inventory** — `data/work-inventory.master.json` is the source of truth; `src/lib/content.ts` maps it into routes and UI.
 - **Unified case studies** — shared `ChapteredCaseStudy` layout for deep-dive projects (workflow, challenges, decisions, tech).
-- **Work archive** — categorized production apps, mobile apps, non-production builds, and business websites.
+- **Work archive** — categorized production apps, mobile apps, internal tools, and business websites.
 - **SEO** — centralized metadata in `src/lib/seo.ts`, dynamic `sitemap.xml`, `robots.txt`, JSON-LD (Person, WebSite, ProfilePage, breadcrumbs / CreativeWork on case studies).
 - **Performance** — lazy-loaded below-fold images, `next/dynamic` for heavy home sections, LCP `priority` on hero assets.
 - **Analytics** — Vercel Analytics and Speed Insights (no env vars required in repo).

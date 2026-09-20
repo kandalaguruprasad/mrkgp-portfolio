@@ -85,7 +85,9 @@ const personJsonLd = {
     "SaaS",
     "Marketplace products",
     "ERP interfaces",
-    "Payment Integration",
+    "Stripe",
+    "Razorpay",
+    "RBAC",
   ],
 };
 

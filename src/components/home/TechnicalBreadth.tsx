@@ -28,7 +28,7 @@ const groups = [
     body: "Where most product complexity actually lives.",
     tint: "#f4f9fb",
     stroke: "#3aa0be",
-    tags: ["REST APIs", "Authentication", "Payments", "Real-time workflows"],
+    tags: ["REST APIs", "Authentication", "Stripe", "Razorpay", "Real-time workflows"],
   },
   {
     icon: Database,

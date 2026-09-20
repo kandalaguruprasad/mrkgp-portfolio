@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { ContentContainer } from "@/components/ui/Layout";
 import { MotionReveal, PageEnter } from "@/components/ui/motion";
 import { FlowStrip, LayeredSystem } from "@/components/ui/Diagram";
 import type { PortfolioProject } from "@/lib/content";
+import { isInternalCompanyProduct, liveHost } from "@/lib/content";
 import {
   ChapterProgressPill,
   ChapterRail,
@@ -136,7 +137,15 @@ export function ChapteredCaseStudy({
   const meta = [
     { label: "Role", value: project.myRole || project.role || "—" },
     { label: "Status", value: project.status || "—" },
-    { label: "Product", value: project.type || project.category || "—" },
+    {
+      label: "Access",
+      value: project.liveUrl
+        ? liveHost(project.liveUrl)
+        : isInternalCompanyProduct(project)
+          ? "Internal — company use only"
+          : "—",
+      href: project.liveUrl,
+    },
     {
       label: "Technology",
       value: project.stack.slice(0, 4).join(" • ") || "—",
@@ -144,8 +153,10 @@ export function ChapteredCaseStudy({
   ];
 
   const chromeLabel = project.liveUrl
-    ? project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")
-    : `${project.slug} — product UI`;
+    ? liveHost(project.liveUrl)
+    : isInternalCompanyProduct(project)
+      ? "Internal — company use only"
+      : `${project.slug} — product UI`;
 
   return (
     <PageEnter>
@@ -169,7 +180,18 @@ export function ChapteredCaseStudy({
                 <span className="h-2.5 w-2.5 rounded-full bg-[#dcdee3]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#dcdee3]" />
                 <span className="ml-3.5 flex h-6 max-w-[420px] flex-1 items-center rounded-md border border-line bg-surface px-3 text-mono text-[10px] text-ink-muted">
-                  {chromeLabel}
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="truncate hover:text-blue"
+                    >
+                      {chromeLabel}
+                    </a>
+                  ) : (
+                    <span className="truncate">{chromeLabel}</span>
+                  )}
                 </span>
               </div>
               <div className="relative h-[300px] bg-[#f7f8fa] sm:h-[420px] md:h-[520px]">
@@ -197,7 +219,19 @@ export function ChapteredCaseStudy({
                 <span className="text-mono text-[9.5px] uppercase tracking-[0.13em] text-ink-muted">
                   {m.label}
                 </span>
-                <span className="mt-1.5 block text-[15px] text-ink">{m.value}</span>
+                {"href" in m && m.href ? (
+                  <a
+                    href={m.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1.5 inline-flex items-center gap-1 text-[15px] text-blue hover:text-ink"
+                  >
+                    {m.value}
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                  </a>
+                ) : (
+                  <span className="mt-1.5 block text-[15px] text-ink">{m.value}</span>
+                )}
               </div>
             ))}
           </div>

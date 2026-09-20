@@ -2,7 +2,7 @@ export type WorkCategoryId =
   | "production"
   | "websites"
   | "mobile"
-  | "non-production";
+  | "internal-tools";
 
 export type ProjectFrame = "product" | "systems" | "delivery";
 
@@ -173,15 +173,15 @@ export function buildWorkCategories(inventory: WorkInventory) {
       tab: "Mobile",
       label: "Mobile Applications",
       supporting:
-        "Built, release-ready mobile clients — not yet published to app stores.",
+        "Release-ready mobile clients — tutoring, marketplace, operations, and QR-menu products.",
     },
     {
-      id: "non-production" as const,
+      id: "internal-tools" as const,
       value: counts.nonProductionApplications,
-      tab: "Non-production",
-      label: "Web Applications",
+      tab: "Internal tools",
+      label: "Internal Tools",
       supporting:
-        "Product UI and workflow explorations that demonstrate engineering depth without production release claims.",
+        "Internal tools and product UI prototypes — dashboards, admin systems, and specialized workflows.",
     },
     {
       id: "websites" as const,

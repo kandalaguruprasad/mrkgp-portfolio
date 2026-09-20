@@ -1,8 +1,77 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import type { PortfolioProject } from "@/lib/content";
+import {
+  isInternalCompanyProduct,
+  liveHost,
+  type PortfolioProject,
+} from "@/lib/content";
 import { MotionReveal } from "@/components/ui/motion";
+
+/** Compact status for cards — short label only, never a long URL. */
+export function ProductAccessBadge({
+  project,
+}: {
+  project: PortfolioProject;
+}) {
+  if (project.liveUrl) {
+    return (
+      <span className="text-mono text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+        Live
+      </span>
+    );
+  }
+  if (isInternalCompanyProduct(project)) {
+    return (
+      <span className="text-mono text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+        Internal
+      </span>
+    );
+  }
+  return null;
+}
+
+/** Explicit live link for flagship / case-study CTAs. */
+export function ProductLiveAccess({
+  project,
+  tone = "default",
+}: {
+  project: PortfolioProject;
+  tone?: "default" | "onDark" | "muted";
+}) {
+  if (project.liveUrl) {
+    const host = liveHost(project.liveUrl);
+    const color =
+      tone === "onDark"
+        ? "text-white/75 hover:text-white"
+        : tone === "muted"
+          ? "text-ink-muted hover:text-blue"
+          : "text-blue hover:text-ink";
+    return (
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`inline-flex items-center gap-1 text-[14px] font-medium ${color}`}
+      >
+        {host}
+        <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+      </a>
+    );
+  }
+  if (isInternalCompanyProduct(project)) {
+    return (
+      <span
+        className={`text-[13.5px] ${
+          tone === "onDark" ? "text-white/45" : "text-ink-muted"
+        }`}
+      >
+        Internal — company use only
+      </span>
+    );
+  }
+  return null;
+}
 
 /* ---- Flagship dark panel (ProCoach) ---- */
 export function FlagshipPanel({ project }: { project: PortfolioProject }) {
@@ -43,12 +112,15 @@ export function FlagshipPanel({ project }: { project: PortfolioProject }) {
                 {project.stack.slice(0, 4).join(", ")}
               </span>
             </div>
-            <Link
-              href={`/projects/${project.slug}`}
-              className="mt-9 inline-flex items-center gap-2.5 rounded-[var(--radius-control)] bg-white px-6 py-3.5 text-[15px] font-medium text-[#16181c] transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-0.5"
-            >
-              Read the case study →
-            </Link>
+            <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="inline-flex items-center gap-2.5 rounded-[var(--radius-control)] bg-white px-6 py-3.5 text-[15px] font-medium text-[#16181c] transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-0.5"
+              >
+                Read the case study →
+              </Link>
+              <ProductLiveAccess project={project} tone="onDark" />
+            </div>
           </div>
           <div className="pb-0 md:pb-0">
             <div className="overflow-hidden rounded-t-[14px] border border-b-0 border-white/[0.13] bg-[#22262c]">
@@ -116,12 +188,15 @@ export function EditorialRow({
               </span>
             </div>
           </div>
-          <Link
-            href={`/projects/${project.slug}`}
-            className="mt-7 inline-block text-[14.5px] font-medium text-blue"
-          >
-            View project →
-          </Link>
+          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="inline-block text-[14.5px] font-medium text-blue"
+            >
+              View project →
+            </Link>
+            <ProductLiveAccess project={project} tone="muted" />
+          </div>
         </div>
         <div className="relative h-[280px] overflow-hidden rounded-[24px] border border-line bg-[#f2f5f2] md:h-[320px]">
           {project.image ? (
@@ -188,6 +263,7 @@ export function WorkCard({
                 {project.status}
               </span>
             ) : null}
+            <ProductAccessBadge project={project} />
           </div>
           <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.03em] text-ink">
             {project.title}

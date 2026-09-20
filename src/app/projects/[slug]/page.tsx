@@ -42,6 +42,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = `${project.oneLiner} — Case study by Kandala Guruprasad (KGP / mrkgp), Frontend Product Engineer.`;
   const url = absoluteUrl(`/projects/${project.slug}`);
   const image = project.image ? absoluteAssetUrl(project.image) : OG_IMAGE;
+  const extraKeywords =
+    project.archiveCategory === "internal-tools"
+      ? ["internal tool", "product UI prototype"]
+      : project.archiveCategory === "mobile"
+        ? ["mobile app"]
+        : [];
 
   return {
     title: { absolute: title },
@@ -54,6 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "mrkgp work",
       project.category,
       project.myRole,
+      ...extraKeywords,
     ].filter(Boolean),
     alternates: { canonical: url },
     openGraph: {
@@ -93,7 +100,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
 
   const crumbs = breadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
+    { name: "Work", path: "/projects" },
     { name: project.title, path: `/projects/${project.slug}` },
   ]);
 
@@ -103,6 +110,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
     name: project.title,
     description: project.oneLiner,
     url: absoluteUrl(`/projects/${project.slug}`),
+    ...(project.liveUrl ? { sameAs: [project.liveUrl] } : {}),
     image: project.image ? absoluteAssetUrl(project.image) : undefined,
     author: {
       "@type": "Person",
@@ -115,7 +123,19 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
       name: "Kandala Guruprasad",
       url: SITE_URL,
     },
-    keywords: [project.title, "Kandala Guruprasad", "KGP", "mrkgp"].join(", "),
+    genre: project.category,
+    keywords: [
+      project.title,
+      "Kandala Guruprasad",
+      "KGP",
+      "mrkgp",
+      project.category,
+      ...(project.archiveCategory === "internal-tools"
+        ? ["internal tool", "prototype"]
+        : project.archiveCategory === "mobile"
+          ? ["mobile app"]
+          : []),
+    ].join(", "),
   };
 
   const { prev, next } = getNeighbors(project);

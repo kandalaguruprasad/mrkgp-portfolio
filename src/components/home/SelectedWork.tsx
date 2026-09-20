@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContentContainer } from "@/components/ui/Layout";
 import { MotionReveal } from "@/components/ui/motion";
 import type { PortfolioProject } from "@/lib/content";
+import { ProductAccessBadge } from "@/components/work/WorkPieces";
 
 function TechTags({ items }: { items: string[] }) {
   return (
@@ -84,6 +85,7 @@ export function SelectedWork({ projects }: { projects: PortfolioProject[] }) {
                     <span className="text-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-muted">
                       {kheti.category}
                     </span>
+                    <ProductAccessBadge project={kheti} />
                   </div>
                   <p className="mt-3 max-w-[32rem] text-[15.5px] leading-[1.55] text-ink-secondary">
                     {kheti.oneLiner}
@@ -116,9 +118,12 @@ export function SelectedWork({ projects }: { projects: PortfolioProject[] }) {
                   ) : null}
                 </div>
                 <div className="flex flex-1 flex-col p-7">
-                  <h3 className="text-[23px] font-semibold tracking-[-0.03em] text-ink">
-                    {rdr.title}
-                  </h3>
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <h3 className="text-[23px] font-semibold tracking-[-0.03em] text-ink">
+                      {rdr.title}
+                    </h3>
+                    <ProductAccessBadge project={rdr} />
+                  </div>
                   <span className="mt-1.5 block text-mono text-[10.5px] uppercase tracking-[0.1em] text-ink-muted">
                     {rdr.category}
                   </span>
@@ -158,9 +163,12 @@ export function SelectedWork({ projects }: { projects: PortfolioProject[] }) {
                   ) : null}
                   <div className="flex flex-1 flex-col p-[30px]">
                     <div>
-                      <h3 className="text-[20px] font-semibold tracking-[-0.025em] text-ink">
-                        {p.title}
-                      </h3>
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                        <h3 className="text-[20px] font-semibold tracking-[-0.025em] text-ink">
+                          {p.title}
+                        </h3>
+                        <ProductAccessBadge project={p} />
+                      </div>
                       <span className="mt-1.5 block text-mono text-[10px] uppercase tracking-[0.1em] text-ink-muted">
                         {p.category || "ERP system"}
                       </span>

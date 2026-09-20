@@ -41,7 +41,7 @@ export const positioning = {
   heroHeadline:
     "I build production product interfaces — and own them end to end.",
   heroLead:
-    "I lead the UI layer across SaaS, marketplaces, ERP, and workflow systems — structure, authentication, payments, dashboards, and API-backed workflows — from requirements through deployment. I step into backend when the product needs it.",
+    "I own the UI layer across SaaS, marketplaces, ERP, and workflow systems — structure, authentication, payments, dashboards, and API-backed workflows — from requirements through deployment. I step into backend when the product needs it.",
   ownershipHeading: "I own the product UI.",
   ownershipLead:
     "Architecture, authentication, payments, dashboards, API integration, and the workflows the business actually runs.",
@@ -75,7 +75,7 @@ export const practice = {
     {
       title: "Payments",
       description:
-        "Stripe and Razorpay flows, payment states, failure handling, and recovery scenarios.",
+        "Implemented Stripe and Razorpay payment flows — payment states, failure handling, and recovery.",
     },
     {
       title: "Backend Contribution",
@@ -140,7 +140,7 @@ export const experience = [
       "Authentication & RBAC",
       "Dashboard & Data Interfaces",
       "API Integration",
-      "Payment Integration & Flows",
+      "Stripe and Razorpay payment flows",
       "Backend Contribution",
       "Deployment & CI/CD",
       "Production Debugging",
@@ -378,6 +378,21 @@ export function getRelatedProjects(
         p.archiveCategory === project.archiveCategory,
     )
     .slice(0, limit);
+}
+
+export function liveHost(url: string): string {
+  try {
+    return new URL(url).host.replace(/^www\./, "");
+  } catch {
+    return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  }
+}
+
+export function isInternalCompanyProduct(project: {
+  archiveCategory: WorkCategoryId;
+  liveUrl: string | null;
+}): boolean {
+  return project.archiveCategory === "production" && !project.liveUrl;
 }
 
 /** Legacy skills.ts shape for gradual migration. */

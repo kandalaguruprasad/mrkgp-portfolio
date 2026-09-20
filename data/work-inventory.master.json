@@ -6,18 +6,23 @@
     "rules": [
       "Use the content in this file as the primary portfolio source.",
       "Do not invent metrics, users, revenue, downloads, performance percentages, business outcomes or production claims.",
+      "Public live URLs are production proof. Internal company products keep liveUrl null and must be labeled as not publicly available.",
+      "Do not use Lead titles unless people leadership is true. Use Frontend Product Engineer as the public role title.",
+      "Leave teamSize null unless an exact product-team count is known. Do not set teamSize to 1 for frontend-only ownership — backend is typically a separate team. Do not invent team sizes or metrics.",
+      "Frontend and UI/UX may be described as sole or primary ownership. Do not claim sole engineer for the whole product when backend is handled by others.",
+      "Do not claim a shared reusable payment layer across products. Stripe and Razorpay were implemented as product-specific payment flows.",
       "Use first-person ownership language only where the project evidence supports it.",
       "Keep project-level functionality separate from personal ownership.",
       "Production applications may have detailed case studies.",
-      "Mobile applications may have detailed case studies.",
-      "Non-production applications may have detailed case studies but must clearly retain their non-production status.",
+      "Mobile applications may have detailed case studies. Do not claim app-store publication unless a live store URL exists.",
+      "Internal tools and prototypes may have detailed case studies; keep them distinct from production products.",
       "Business websites remain card-based portfolio items with live URLs rather than deep product case studies.",
       "Do not expose private API keys, Firebase credentials, secrets, client credentials or confidential information.",
       "Use empty strings or empty arrays when information is genuinely unavailable.",
       "featured should be true only for the strongest flagship production projects.",
       "priority controls display order within each category.",
       "frame must be product, systems or delivery.",
-      "archiveCategory must be production, websites, mobile or non-production."
+      "archiveCategory must be production, websites, mobile or internal-tools."
     ],
     "positioning": {
       "primaryRole": "Frontend Product Engineer",
@@ -28,7 +33,7 @@
   },
   "workPage": {
     "title": "Products I owned from interface through delivery.",
-    "intro": "Production web products, business websites, mobile applications, and web application development — with frontend product ownership at the center."
+    "intro": "Production web products, business websites, mobile applications, and internal tools — with frontend product ownership at the center."
   },
   "categoryCounts": {
     "productionApplications": "05",
@@ -60,7 +65,7 @@
       "problem": "Coaches needed a product for publishing and operating paid sessions, while learners and parents needed a reliable way to discover sessions, enroll and pay. The frontend also had to coordinate multiple APIs, authentication states, session workflows and payment flows while being delivered as a statically hosted Next.js application.",
       "solution": "Built and evolved the frontend product experience around role-specific workflows, reusable feature structures, API integrations and embedded Stripe payment experiences. The application connects profile, schedules and payment services into the coach and learner journeys.",
       "myRole": "Frontend Product Engineer",
-      "role": "Primary frontend engineer on the ProCoach web client, with ownership across major product UI and feature workflows.",
+      "role": "Frontend Product Engineer on the ProCoach web client — product UI, UI/UX, and feature workflows. I owned frontend and UI/UX; backend was handled separately, and I contribute there when needed.",
       "backendContribution": "Integrated and orchestrated existing backend services from the frontend. No backend service ownership is claimed from this repository.",
       "ownership": [
         "Majority of UI feature delivery represented in the available Git history.",
@@ -273,7 +278,7 @@
       "frame": "product",
       "timeline": "",
       "teamSize": null,
-      "liveUrl": null,
+      "liveUrl": "https://www.khetivalah.com",
       "image": "/Projects Images/SaaS/khetivalah-agriculture-marketplace-ui.png",
       "demo": false,
       "oneLiner": "Agricultural marketplace and event booking on the web — listings, stall booking, Razorpay payments, and GST billing across vendor, sponsor, and participant roles.",
@@ -282,7 +287,7 @@
       "problem": "Agricultural participants need more than static listings. Vendors must book stalls and manage products, sponsors select plans, attendees register and pay, and every role needs reliable Razorpay checkout, billing, and order visibility on the web.",
       "solution": "A React web client integrated with the AgriEvents / marketplace backend — role-aware booking flows, Razorpay payment UI, GST billing surfaces, catalog management, and operational dashboards.",
       "myRole": "Frontend Product Engineer",
-      "role": "Frontend engineer on the KhetiValah web application — marketplace UI, booking flows, payments, and API integration.",
+      "role": "Frontend Product Engineer on the KhetiValah web application — marketplace UI, booking flows, payments, and API integration. Primary frontend and UI/UX engineer, with other developers also involved. Backend was handled separately; I contribute there when needed.",
       "backendContribution": "Frontend integration with Spring Boot / AgriEvents REST APIs. Backend service ownership is not claimed.",
       "ownership": [
         "Marketplace and event discovery interfaces on the web.",
@@ -463,7 +468,7 @@
       "category": "Workflow Platform · Audit & Taxation",
       "type": "Real-time web workflow platform",
       "status": "Production",
-      "statusDetail": "Production web application — real-time workflow, tasks, and operational dashboards",
+      "statusDetail": "Production web application for internal company use — not publicly available.",
       "featured": true,
       "priority": 3,
       "archiveCategory": "production",
@@ -478,8 +483,8 @@
       "overview": "The web product replaces fragmented coordination with structured workflows, operational dashboards, and live status updates across roles in an audit and compliance practice.",
       "problem": "Audit and tax teams need shared visibility into tasks, workload, and workflow state. Static dashboards and manual refresh are not enough when multiple users act on the same operational data.",
       "solution": "A React web client with WebSocket-driven updates, role-aware workflow transitions, dense operational dashboards, and REST API integration with a Node.js backend.",
-      "myRole": "Frontend Lead",
-      "role": "Frontend lead on the RDR Tech web client — workflow UI, dashboards, real-time state, and API integration.",
+      "myRole": "Frontend Product Engineer",
+      "role": "Frontend Product Engineer on the RDR Tech web client — workflow UI, dashboards, real-time state, and API integration. I owned frontend and UI/UX; backend was handled separately, and I contribute there when needed.",
       "backendContribution": "Worked with the Node.js backend and real-time event lifecycle; backend service ownership is not claimed from the frontend repository.",
       "ownership": [
         "Frontend architecture for the web workflow platform.",
@@ -602,7 +607,7 @@
         "heroSubtitle": "Web dashboards, task workflows, and WebSocket updates — separate from the mobile client.",
         "context": "RDR Tech on the web is the production workflow platform. The RDR Tech App is a separate mobile client documented under Mobile Applications.",
         "problem": "Professional-services teams needed a web product where workflow progress, assignments, and reporting stayed current for every user in real time.",
-        "role": "Frontend Lead",
+        "role": "Frontend Product Engineer",
         "ownership": [
           "Web frontend architecture",
           "Workflow and task UI",
@@ -627,7 +632,7 @@
           "Model workflow permissions in the UI, not just on the server.",
           "Keep reporting and task views modular but consistent."
         ],
-        "production": "Production web workflow platform. Mobile companion app is documented separately under RDR Tech App.",
+        "production": "Production web workflow platform used internally by the company — not publicly available. Mobile companion app is documented separately under RDR Tech App.",
         "outcome": "A real-time web operations platform for audit and taxation workflows, with live dashboards and role-aware task management."
       },
       "screenshots": [],
@@ -645,14 +650,14 @@
       "category": "ERP · Business Operations",
       "type": "Poultry farm operations ERP",
       "status": "Production",
-      "statusDetail": "Production-oriented client product; documented frontend snapshot does not prove that exact checkout is the deployed artifact",
+      "statusDetail": "Production product — public site at sgreens.com; operations ERP is authenticated.",
       "featured": false,
       "priority": 4,
       "archiveCategory": "production",
       "frame": "systems",
       "timeline": "",
       "teamSize": null,
-      "liveUrl": null,
+      "liveUrl": "http://sgreens.com/",
       "image": "/Projects/SGreens ERP.png",
       "demo": false,
       "oneLiner": "Poultry farm ERP — production, inventory, purchases, sales, hatchery, and accounts in one operations system.",
@@ -661,7 +666,7 @@
       "problem": "A multi-branch poultry operation needs consistent operational records across production, purchases, sales, stock, employees and financial information rather than relying on disconnected manual processes.",
       "solution": "An Angular operational interface with role-aware modules, REST service integration, dashboards, forms, tables, stock calculations, reports and business workflows.",
       "myRole": "Frontend Product Engineer",
-      "role": "Frontend contributor on the Angular operations application.",
+      "role": "Frontend Product Engineer on the Angular operations application. I owned frontend and UI/UX; backend was handled separately, and I contribute there when needed.",
       "backendContribution": "Consumed the separate REST backend; backend ownership is not claimed from the available frontend workspace.",
       "ownership": [
         "Frontend implementation across operational modules where personally confirmed.",
@@ -832,7 +837,7 @@
       "problem": "The business needed online product discovery alongside operational workflows such as GST quotations, stock, purchasing, sales, dispatch and production, with different staff roles accessing different parts of the system.",
       "solution": "An Angular application combining a public catalog/cart experience with role-aware internal ERP modules, REST integrations, operational tables, quotation generation and production workflows.",
       "myRole": "Frontend Product Engineer",
-      "role": "Frontend contributor on the Angular product and ERP interface.",
+      "role": "Frontend Product Engineer on the Angular product and ERP interface. Primary frontend and UI/UX engineer, with other developers also involved. Backend was handled separately; I contribute there when needed.",
       "backendContribution": "Frontend consumption of the REST API. Backend ownership is not claimed without separate confirmation.",
       "ownership": [
         "Frontend product implementation.",
@@ -1115,7 +1120,7 @@
       "category": "Mobile · Education Marketplace",
       "type": "Parent–teacher class marketplace",
       "status": "Ready for release",
-      "statusDetail": "Built hybrid mobile client with real API integrations — not yet published to app stores.",
+      "statusDetail": "Release-ready hybrid client with real API integrations.",
       "featured": false,
       "priority": 14,
       "archiveCategory": "mobile",
@@ -1286,7 +1291,7 @@
           "Derive availability from existing course windows.",
           "Keep comments lightweight and optimistic without introducing realtime infrastructure."
         ],
-        "production": "The repository contains a compiled Cordova build and real API integrations, but the available snapshot does not prove a final store release.",
+        "production": "Release-ready hybrid client with a compiled Cordova build and real API integrations.",
         "outcome": "A feature-rich marketplace client covering the main parent and teacher journeys, integrated with Firebase auth and AWS APIs."
       },
       "screenshots": [],
@@ -1302,7 +1307,7 @@
       "category": "Mobile · KhetiValah",
       "type": "React Native mobile client",
       "status": "Ready for release",
-      "statusDetail": "Built React Native companion to the KhetiValah web platform — not yet published to app stores.",
+      "statusDetail": "Release-ready React Native companion to the KhetiValah web platform.",
       "featured": false,
       "priority": 15,
       "archiveCategory": "mobile",
@@ -1318,7 +1323,7 @@
       "problem": "Event participants and vendors need mobile access to the same participation workflows available on the web, including multi-step product creation and media uploads in the field.",
       "solution": "A React Native TypeScript client with feature modules, Context/useReducer state, AsyncStorage, and AgriEvents API integration.",
       "myRole": "Frontend Product Engineer",
-      "role": "Frontend Product Engineer — mobile client for KhetiValah.",
+      "role": "Frontend Product Engineer — mobile client for KhetiValah. I owned frontend and UI/UX on this client; backend was handled separately, and I contribute there when needed.",
       "backendContribution": "Integrated external REST APIs; no backend ownership claimed.",
       "ownership": [
         "React Native application architecture.",
@@ -1456,7 +1461,7 @@
           "Use a step-based wizard instead of one long form for vendor product creation.",
           "Share API integration patterns with the web client without duplicating web-only payment flows."
         ],
-        "production": "Mobile development/staging client with real API integration. Production web platform is documented under KhetiValah in Production Applications.",
+        "production": "Release-ready mobile client with real API integration. Production web platform is documented under KhetiValah.",
         "outcome": "A React Native companion that extends KhetiValah with mobile event discovery, vendor catalog management, and native media uploads."
       },
       "screenshots": [],
@@ -1472,7 +1477,7 @@
       "category": "Mobile · RDR Tech",
       "type": "React Native mobile client",
       "status": "Ready for release",
-      "statusDetail": "Built React Native companion to the RDR Tech web platform — not yet published to app stores.",
+      "statusDetail": "Release-ready React Native companion to the RDR Tech web platform.",
       "featured": false,
       "priority": 16,
       "archiveCategory": "mobile",
@@ -1488,7 +1493,7 @@
       "problem": "Firm owners and staff need mobile access to onboarding, verification, and key operational views — with layouts that work on both phone and tablet.",
       "solution": "A React Native client with Firebase authentication, native media capture, subscription UI, Razorpay helper integration, and tablet-aware layouts.",
       "myRole": "Frontend Product Engineer",
-      "role": "Frontend Product Engineer — mobile client for RDR Tech.",
+      "role": "Frontend Product Engineer — mobile client for RDR Tech. I owned frontend and UI/UX; backend was handled separately, and I contribute there when needed.",
       "backendContribution": "No backend ownership claimed.",
       "ownership": [
         "React Native screen map and navigation.",
@@ -1616,7 +1621,7 @@
           "Use minimal Context for OTP handoff instead of over-centralizing mobile state.",
           "Share tablet layout logic across operational screens for consistent phone and tablet use."
         ],
-        "production": "Mobile development client. Production web workflow platform is documented under RDR Tech in Production Applications.",
+        "production": "Release-ready mobile client. Production web workflow platform is documented under RDR Tech.",
         "outcome": "A React Native companion for firm onboarding, KYC, membership, and operational access on phone and tablet."
       },
       "screenshots": [],
@@ -1632,7 +1637,7 @@
       "category": "Mobile · Menu Scanner",
       "type": "QR digital menu ecosystem",
       "status": "Ready for release",
-      "statusDetail": "Built multi-app QR menu ecosystem — not yet published to app stores.",
+      "statusDetail": "Release-ready multi-app QR menu ecosystem.",
       "featured": false,
       "priority": 17,
       "archiveCategory": "mobile",
@@ -1780,7 +1785,7 @@
           "Separate owner and guest experiences around the same menu contract.",
           "Keep the QR identifier as the bridge between the physical restaurant and digital menu."
         ],
-        "production": "Production-oriented ecosystem; exact store publication is not established in the available repository evidence.",
+        "production": "Release-ready multi-app QR menu ecosystem with real API integrations.",
         "outcome": "A multi-application digital menu product linking restaurant administration to guest consumption."
       },
       "screenshots": [],
@@ -1795,13 +1800,13 @@
       "slug": "optimo-logix",
       "name": "Optimo Logix",
       "displayName": "Optimo Logix",
-      "category": "Non-Production Application",
+      "category": "Internal tool",
       "type": "Internal admin / operations dashboard prototype",
-      "status": "Non-Production",
+      "status": "Prototype",
       "statusDetail": "Frontend-only prototype with mock data",
       "featured": false,
       "priority": 18,
-      "archiveCategory": "non-production",
+      "archiveCategory": "internal-tools",
       "frame": "product",
       "timeline": "",
       "teamSize": null,
@@ -1906,8 +1911,8 @@
         "engineeringDecisions": [
           "Use reusable UI primitives for repeated operational patterns."
         ],
-        "production": "Non-production frontend prototype using mock data.",
-        "outcome": "A clear demonstration of dashboard composition and operations-product UI thinking — explicitly non-production."
+        "production": "Internal frontend prototype using mock data.",
+        "outcome": "A clear demonstration of dashboard composition and operations-product UI thinking."
       },
       "screenshots": []
     },
@@ -1915,13 +1920,13 @@
       "slug": "school-admin-pro",
       "name": "School Admin Pro",
       "displayName": "School Admin Pro",
-      "category": "Non-Production Application",
+      "category": "Internal tool",
       "type": "Multi-school administration web prototype",
-      "status": "Non-Production",
+      "status": "Prototype",
       "statusDetail": "Angular UI prototype with static mock data",
       "featured": false,
       "priority": 19,
-      "archiveCategory": "non-production",
+      "archiveCategory": "internal-tools",
       "frame": "systems",
       "timeline": "",
       "teamSize": null,
@@ -2015,8 +2020,8 @@
         "engineeringDecisions": [
           "Use school-scoped navigation as the primary information architecture."
         ],
-        "production": "Non-production UI prototype with static mock data.",
-        "outcome": "A focused admin UI prototype demonstrating multi-tenant information architecture — non-production."
+        "production": "Internal UI prototype with static mock data.",
+        "outcome": "A focused admin UI prototype demonstrating multi-tenant information architecture."
       },
       "screenshots": []
     },
@@ -2024,13 +2029,13 @@
       "slug": "annotation-tool",
       "name": "Annotation Tool",
       "displayName": "Annotation Tool",
-      "category": "Non-Production Application",
+      "category": "Internal tool",
       "type": "Image annotation / computer-vision data labeling tool",
-      "status": "Non-Production",
+      "status": "Prototype",
       "statusDetail": "Internal/enterprise frontend prototype",
       "featured": false,
       "priority": 20,
-      "archiveCategory": "non-production",
+      "archiveCategory": "internal-tools",
       "frame": "product",
       "timeline": "",
       "teamSize": null,
@@ -2125,8 +2130,8 @@
         "engineeringDecisions": [
           "Prioritize the image workspace over conventional dashboard patterns."
         ],
-        "production": "Non-production/internal prototype.",
-        "outcome": "A specialized product UI demonstrating image-based interaction — internal/non-production work."
+        "production": "Internal prototype.",
+        "outcome": "A specialized product UI demonstrating image-based interaction."
       },
       "screenshots": []
     }

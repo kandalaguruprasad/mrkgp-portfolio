@@ -16,16 +16,17 @@ import {
   WorkCard,
 } from "@/components/work/WorkPieces";
 
-type Tab = "production" | "mobile" | "non-production" | "websites";
+type Tab = "production" | "mobile" | "internal-tools" | "websites";
 
 const tabs: { id: Tab; label: string }[] = [
   { id: "production", label: "Production" },
   { id: "mobile", label: "Mobile" },
-  { id: "non-production", label: "Non-production" },
+  { id: "internal-tools", label: "Internal tools" },
   { id: "websites", label: "Websites" },
 ];
 
 function parseTab(value: string | null): Tab {
+  if (value === "non-production") return "internal-tools";
   return tabs.some((t) => t.id === value) ? (value as Tab) : "production";
 }
 
@@ -45,8 +46,8 @@ export default function ProjectsPageClient() {
 
   const production = useMemo(() => getProjectsByCategory("production"), []);
   const mobile = useMemo(() => getProjectsByCategory("mobile"), []);
-  const nonProduction = useMemo(
-    () => getProjectsByCategory("non-production"),
+  const internalTools = useMemo(
+    () => getProjectsByCategory("internal-tools"),
     [],
   );
 
@@ -63,8 +64,8 @@ export default function ProjectsPageClient() {
       ? production.length
       : tab === "mobile"
         ? mobile.length
-        : tab === "non-production"
-          ? nonProduction.length
+        : tab === "internal-tools"
+          ? internalTools.length
           : websites.length;
 
   return (
@@ -158,7 +159,7 @@ export default function ProjectsPageClient() {
             </div>
           ) : (
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {(tab === "mobile" ? mobile : nonProduction).map((p) => (
+              {(tab === "mobile" ? mobile : internalTools).map((p) => (
                 <WorkCard key={p.slug} project={p} />
               ))}
             </div>

@@ -43,7 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 0.85
         : p.archiveCategory === "mobile"
           ? 0.7
-          : 0.6,
+          : p.archiveCategory === "internal-tools"
+            ? 0.6
+            : 0.6,
   }));
 
   return [...core, ...projectEntries];

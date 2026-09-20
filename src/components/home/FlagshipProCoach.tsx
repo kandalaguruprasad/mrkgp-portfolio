@@ -1,9 +1,10 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ContentContainer } from "@/components/ui/Layout";
 import { MotionReveal } from "@/components/ui/motion";
 import { ProductTiltCard } from "@/components/home/ProductTiltCard";
 import type { PortfolioProject } from "@/lib/content";
+import { liveHost } from "@/lib/content";
 
 export function FlagshipProCoach({ project }: { project: PortfolioProject }) {
   const meta = [
@@ -53,13 +54,26 @@ export function FlagshipProCoach({ project }: { project: PortfolioProject }) {
                   ))}
                 </div>
 
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="mt-9 inline-flex items-center gap-2.5 rounded-[var(--radius-control)] bg-white px-6 py-3.5 text-[15px] font-medium text-[#16181c] transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-0.5"
-                >
-                  Explore case study
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
+                <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="inline-flex items-center gap-2.5 rounded-[var(--radius-control)] bg-white px-6 py-3.5 text-[15px] font-medium text-[#16181c] transition-transform duration-[var(--duration-fast)] ease-[var(--ease-out)] hover:-translate-y-0.5"
+                  >
+                    Explore case study
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[14px] font-medium text-white/75 hover:text-white"
+                    >
+                      {liveHost(project.liveUrl)}
+                      <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+                    </a>
+                  ) : null}
+                </div>
               </div>
 
               <ProductTiltCard
